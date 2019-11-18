@@ -38,6 +38,10 @@ interface Kernel {
 
     fun update(h: Handle, alpha: Float, inc: Handle): Handle
 
+    fun norm(handle: Handle): Float
+
+    fun dot(a: Handle, b: Handle): Handle
+
     companion object {
         fun get() = CpuKernel()
     }

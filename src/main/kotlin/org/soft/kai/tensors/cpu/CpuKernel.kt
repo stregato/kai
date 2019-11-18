@@ -3,6 +3,8 @@ package org.soft.kai.tensors.cpu
 import org.soft.kai.tensors.Handle
 import org.soft.kai.tensors.Kernel
 import org.soft.kai.tensors.Tensor
+import java.lang.Integer.max
+import kotlin.math.sqrt
 
 
 class CpuKernel: Kernel {
@@ -94,6 +96,20 @@ class CpuKernel: Kernel {
         }
     }
 
+    override fun norm(a: Handle) = sqrt((dot(a,a) as FloatArray)[0])
+
+    override fun dot(a: Handle, b: Handle): Handle {
+        val fa = a as FloatArray
+        val fb = b as FloatArray
+
+        val size = max(fa.size, fb.size)
+        var result = 0f
+
+        for (i in 0 until size) {
+            result += fa[i%fa.size] * fb[i%fb.size]
+        }
+        return result
+    }
 
     override fun toString() = "CPU"
 }

@@ -1,8 +1,6 @@
 package org.soft.kai.tensors
 
-import org.soft.kai.grad.Gradient
-import org.soft.kai.grad.MulGrad
-import org.soft.kai.grad.grad
+import org.soft.kai.grad.*
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -49,7 +47,29 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
     fun toFloatArray() = kernel.toFloatArray(handle)
 
+    /**
+     * Convert a tensor to float. It requires to tensor to have volume 1 and batch 1
+     */
+    fun foFloat(): Float {
+        check(volume == 1 && batch == 1) {
+            "Tensor $this has size or batch different than 1"
+        }
+        return toFloatArray()[0]
+    }
+
+    /**
+     * Create a new tensor with same elements but different shape
+     */
     fun reshape(vararg s: Int) = Tensor(s, handle)
+
+    infix fun dot (t: Tensor) = grad(this, t, TensorMulGrad()) { _, t ->
+        require(volume == t.volume) {
+            "Matrix $this and $t have not the same volume"
+        }
+
+        val h = kernel.dot(handle, t.handle)
+        Tensor(intArrayOf(1), h)
+    }
 
     operator fun plus(t: Tensor): Tensor {
         require(shape.contentEquals(t.shape)) {
@@ -94,7 +114,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
     fun mutable() = MutableTensor(shape, handle)
 
 
-    operator fun times(s: Float) = grad(this, MulGrad(s)) {
+    operator fun times(s: Float) = grad(this, ScalarMulGrad(s)) {
             x-> x.map {it *s }
     }
 
@@ -113,7 +133,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         toFloatArray().map(transform).toFloatArray()
     )
 
-    fun transpose(): Tensor {
+    fun t(): Tensor {
         assert(shape.size <= 2) {
             "Transpose is supported only for vector and matrix. $this has shape size ${shape.size}"
         }
@@ -144,7 +164,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
     }
 }
 
-
+operator fun Float.times(t: Tensor): Tensor = t * this
 
 /**
  * Returns the sum of all elements in the array.

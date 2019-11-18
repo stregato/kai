@@ -35,6 +35,7 @@ abstract class G1: Gradient() {
     }
 }
 
+
 abstract class G2: Gradient() {
     abstract fun `∂a`(a: Tensor, b: Tensor): Tensor
 
@@ -57,3 +58,9 @@ fun grad(x: Tensor, gradient: Gradient, fn: C1): Tensor {
     return y
 }
 
+fun grad(a: Tensor, b: Tensor, gradient: Gradient, fn: C2): Tensor {
+    gradient.xs = arrayOf(a,b)
+    val y = fn(a, b)
+    y.gradient = gradient
+    return y
+}

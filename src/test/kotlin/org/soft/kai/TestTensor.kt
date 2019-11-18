@@ -123,7 +123,7 @@ class TestTensor {
     @Test
     fun transpose() {
         val x = tensor("1 2 3", "4 5 6")
-        val y = x.transpose()
+        val y = x.t()
 
         assertEquals(x.shape[0], y.shape[1])
         assertEquals(x.shape[1], y.shape[0])

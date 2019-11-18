@@ -41,6 +41,8 @@ fun tensor(vararg lines: String): Tensor {
         assert(row.size == m) { "row $idx has less than $m items"}
     }
 
+    val shape = if (n == 1) intArrayOf(m) else intArrayOf(n,m)
+
     return tensor(intArrayOf(n, m), rows.flatten().toFloatArray())
 }
 
