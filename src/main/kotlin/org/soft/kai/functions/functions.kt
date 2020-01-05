@@ -1,1 +1,0 @@
-package org.soft.kai.functions

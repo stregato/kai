@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VjxWfrWBDRe3P1VZXFRB1CqrwK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="org.soft2.kai.tensors.cpu" />
+      <recent name="org.soft2.kai.tensors" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="org.soft2.kai.tensors.cpu" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MultiplicationByTensor">
+    <configuration name="AdditionToTensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.AdditionToTensor" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BitwiseMultiplication.multiplicationBitwiseBatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.BitwiseMultiplication" />
+      <option name="METHOD_NAME" value="multiplicationBitwiseBatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiplicationByTensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.MultiplicationByTensor" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiplicationByTensor.multiplicationByOneWithBatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.MultiplicationByTensor" />
+      <option name="METHOD_NAME" value="multiplicationByOneWithBatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiplicationByTensor.multiplicationByTensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.MultiplicationByTensor" />
+      <option name="METHOD_NAME" value="multiplicationByTensor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MultiplicationByTensor" />
+        <item itemvalue="JUnit.MultiplicationByTensor.multiplicationByTensor" />
+        <item itemvalue="JUnit.MultiplicationByTensor.multiplicationByOneWithBatch" />
+        <item itemvalue="JUnit.BitwiseMultiplication.multiplicationBitwiseBatch" />
+        <item itemvalue="JUnit.AdditionToTensor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="" />
+      <created>1577780338674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577780338674</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="99" y="96" width="2362" height="1245" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1578077719852">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="99" y="96" width="2362" height="1245" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578077719852" />
+    <state x="742" y="181" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1578038168909">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="742" y="181" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578038168909" />
+    <state width="418" height="466" key="DebuggerActiveHint" timestamp="1578077744201">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="418" height="466" key="DebuggerActiveHint/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578077744201" />
+    <state width="1874" height="289" key="GridCell.Tab.0.bottom" timestamp="1578212646711">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="2514" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
+    <state width="1874" height="289" key="GridCell.Tab.0.center" timestamp="1578212646711">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="289" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="2514" height="399" key="GridCell.Tab.0.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
+    <state width="1874" height="289" key="GridCell.Tab.0.left" timestamp="1578212646711">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="289" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="2514" height="399" key="GridCell.Tab.0.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
+    <state width="1874" height="289" key="GridCell.Tab.0.right" timestamp="1578212646711">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="289" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="2514" height="399" key="GridCell.Tab.0.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
+    <state width="1874" height="288" key="GridCell.Tab.1.bottom" timestamp="1578212646708">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646708" />
+    <state width="2514" height="399" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244533" />
+    <state width="1874" height="288" key="GridCell.Tab.1.center" timestamp="1578212646707">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646707" />
+    <state width="2514" height="399" key="GridCell.Tab.1.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244533" />
+    <state width="1874" height="288" key="GridCell.Tab.1.left" timestamp="1578212646707">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646707" />
+    <state width="2514" height="399" key="GridCell.Tab.1.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244532" />
+    <state width="1874" height="288" key="GridCell.Tab.1.right" timestamp="1578212646708">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="288" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646708" />
+    <state width="2514" height="399" key="GridCell.Tab.1.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244533" />
+    <state x="460" y="164" key="SettingsEditor" timestamp="1578210302967">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="460" y="164" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1578210302967" />
+    <state x="688" y="263" width="540" height="524" key="StructurePopup" timestamp="1578124084908">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="688" y="263" width="540" height="524" key="StructurePopup/0.0.1920.1080@0.0.1920.1080" timestamp="1578124084908" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1578210323285">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1578210323285" />
+    <state x="719" y="401" key="com.intellij.ide.util.TipDialog" timestamp="1578120067248">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="719" y="401" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578120067248" />
+    <state x="959" y="535" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578068380208" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestTensor.kt</url>
+          <line>142</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToScalar.kt</url>
+          <line>29</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt</url>
+          <line>50</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
