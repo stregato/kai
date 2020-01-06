@@ -16,7 +16,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
     var gradient: Gradient? = null
 
     companion object {
-        var kernel: Kernel = Kernel.get()
+        var kernel: Kernel = Kernel.default
     }
 
     constructor(shape: IntArray, elements: FloatArray): this(shape, kernel.allocate(elements))

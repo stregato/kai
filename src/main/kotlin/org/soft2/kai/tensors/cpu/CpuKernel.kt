@@ -6,7 +6,7 @@ import kotlin.math.max
 import kotlin.math.sqrt
 
 
-class CpuKernel: Kernel {
+object CpuKernel: Kernel {
 
     override fun allocate(floatArray: FloatArray) = floatArray
 
@@ -20,7 +20,6 @@ class CpuKernel: Kernel {
     override fun matrixMul(
         a: Handle, b: Handle,
         n: Int, m: Int, q: Int,
-        transA: Boolean, transB: Boolean,
         beta: Float
     ): Handle {
         val ta = a as FloatArray

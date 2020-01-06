@@ -1,14 +1,20 @@
 package org.soft2.kai.tensors.cpu
 
+import org.junit.Before
 import org.junit.Test
 import org.soft2.kai.eye
 import org.soft2.kai.random
 import org.soft2.kai.tensor
+import org.soft2.kai.tensors.Kernel
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
-class MultiplicationByTensor {
+open class MultiplicationByTensor {
 
+    @Before
+    open fun before() {
+        Kernel.default = CpuKernel
+    }
 
     @Test
     fun multiplicationByOne() {
@@ -50,9 +56,11 @@ class MultiplicationByTensor {
     fun multiplicationWithBatch() {
         val a = tensor(4,3,3) { it.toFloat() }.shatter()
         val b = tensor("0 1", "2 3", "4 5")
-        val e = tensor("10 13", "28 40", "46 67",
+        val e = tensor("10 13 ", "28 40", "46 67",
                               "64 94", "82 121", "100 148",
-                              "118 175", "136 202", "1094 1404").reshape(2, 3)
+                              "118 175", "136 202", "154 229",
+                              "172 256", "190 283", "208 310"
+            ).reshape(3, 2)
 
         assertEquals(e, a * b)
     }

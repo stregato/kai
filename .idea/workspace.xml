@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="" />
+    <list default="true" id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaKernel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/MultiplicationByTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Kernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Kernel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuTensor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/BitwiseMultiplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/BitwiseMultiplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByTensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByTensor.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +31,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -29,6 +54,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
@@ -38,40 +64,25 @@
       <recent name="org.soft2.kai.tensors" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="org.soft2.kai.tensors.cuda" />
       <recent name="org.soft2.kai.tensors.cpu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MultiplicationByTensor">
-    <configuration name="AdditionToTensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MultiplicationByTensor (1)">
+    <configuration name="MultiplicationByTensor (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kai" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="PATTERN" value="org.soft2.kai.tensors.cuda.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.AdditionToTensor" />
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cuda" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cuda.MultiplicationByTensor" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BitwiseMultiplication.multiplicationBitwiseBatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kai" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.BitwiseMultiplication" />
-      <option name="METHOD_NAME" value="multiplicationBitwiseBatch" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,13 +134,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.soft2.kai.tensors.cpu in kai" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MultiplicationByTensor (1)" />
+        <item itemvalue="JUnit.org.soft2.kai.tensors.cpu in kai" />
         <item itemvalue="JUnit.MultiplicationByTensor" />
         <item itemvalue="JUnit.MultiplicationByTensor.multiplicationByTensor" />
         <item itemvalue="JUnit.MultiplicationByTensor.multiplicationByOneWithBatch" />
-        <item itemvalue="JUnit.BitwiseMultiplication.multiplicationBitwiseBatch" />
-        <item itemvalue="JUnit.AdditionToTensor" />
       </list>
     </recent_temporary>
   </component>
@@ -163,6 +188,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="99" y="96" width="2362" height="1245" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578077719852" />
+    <state x="750" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1578333560817">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="750" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578333560817" />
     <state x="742" y="181" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1578038168909">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -171,45 +200,45 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="418" height="466" key="DebuggerActiveHint/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578077744201" />
-    <state width="1874" height="289" key="GridCell.Tab.0.bottom" timestamp="1578212646711">
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom" timestamp="1578340383691">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="1874" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383691" />
     <state width="2514" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
-    <state width="1874" height="289" key="GridCell.Tab.0.center" timestamp="1578212646711">
+    <state width="1874" height="288" key="GridCell.Tab.0.center" timestamp="1578340383690">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="289" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="1874" height="288" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383690" />
     <state width="2514" height="399" key="GridCell.Tab.0.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
-    <state width="1874" height="289" key="GridCell.Tab.0.left" timestamp="1578212646711">
+    <state width="1874" height="288" key="GridCell.Tab.0.left" timestamp="1578340383690">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="289" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="1874" height="288" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383690" />
     <state width="2514" height="399" key="GridCell.Tab.0.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
-    <state width="1874" height="289" key="GridCell.Tab.0.right" timestamp="1578212646711">
+    <state width="1874" height="288" key="GridCell.Tab.0.right" timestamp="1578340383690">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="289" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646711" />
+    <state width="1874" height="288" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383690" />
     <state width="2514" height="399" key="GridCell.Tab.0.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087242224" />
-    <state width="1874" height="288" key="GridCell.Tab.1.bottom" timestamp="1578212646708">
+    <state width="1874" height="288" key="GridCell.Tab.1.bottom" timestamp="1578340383549">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646708" />
+    <state width="1874" height="288" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383549" />
     <state width="2514" height="399" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244533" />
-    <state width="1874" height="288" key="GridCell.Tab.1.center" timestamp="1578212646707">
+    <state width="1874" height="288" key="GridCell.Tab.1.center" timestamp="1578340383549">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646707" />
+    <state width="1874" height="288" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383549" />
     <state width="2514" height="399" key="GridCell.Tab.1.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244533" />
-    <state width="1874" height="288" key="GridCell.Tab.1.left" timestamp="1578212646707">
+    <state width="1874" height="288" key="GridCell.Tab.1.left" timestamp="1578340383549">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646707" />
+    <state width="1874" height="288" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383549" />
     <state width="2514" height="399" key="GridCell.Tab.1.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244532" />
-    <state width="1874" height="288" key="GridCell.Tab.1.right" timestamp="1578212646708">
+    <state width="1874" height="288" key="GridCell.Tab.1.right" timestamp="1578340383549">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="288" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578212646708" />
+    <state width="1874" height="288" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578340383549" />
     <state width="2514" height="399" key="GridCell.Tab.1.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578087244533" />
     <state x="460" y="164" key="SettingsEditor" timestamp="1578210302967">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -223,10 +252,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1578210323285" />
-    <state x="719" y="401" key="com.intellij.ide.util.TipDialog" timestamp="1578120067248">
+    <state x="-1" y="-26" width="1922" height="1107" key="com.intellij.ide.util.TipDialog" timestamp="1578331285771">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="719" y="401" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578120067248" />
+    <state x="-1" y="-26" width="1922" height="1107" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578331285771" />
     <state x="959" y="535" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578068380208" />
   </component>
   <component name="XDebuggerManager">
@@ -239,17 +268,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt</url>
-          <line>12</line>
+          <line>19</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt</url>
-          <line>35</line>
+          <line>41</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToScalar.kt</url>
-          <line>29</line>
+          <line>37</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -257,7 +286,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt</url>
-          <line>50</line>
+          <line>56</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>

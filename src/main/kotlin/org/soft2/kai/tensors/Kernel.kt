@@ -1,6 +1,7 @@
 package org.soft2.kai.tensors
 
 import org.soft2.kai.tensors.cpu.CpuKernel
+import org.soft2.kai.tensors.cuda.CudaKernel
 
 typealias Handle = Any
 
@@ -22,7 +23,6 @@ interface Kernel {
     fun matrixMul(
         a: Handle, b: Handle,
         n: Int, m: Int, q: Int,
-        transA: Boolean = false, transB: Boolean = false,
         beta: Float = 0f
     ):  Handle
 
@@ -44,7 +44,11 @@ interface Kernel {
     fun expand(a: Handle, volume: Int, targetVolume: Int): FloatArray
 
     companion object {
-        fun get() = CpuKernel()
+        var default: Kernel
+
+         init {
+             default = if (CudaKernel.available) CudaKernel else CpuKernel
+         }
     }
 
 }

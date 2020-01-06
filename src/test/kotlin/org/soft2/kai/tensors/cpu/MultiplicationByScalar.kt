@@ -1,10 +1,17 @@
 package org.soft2.kai.tensors.cpu
 
+import org.junit.Before
 import org.junit.Test
 import org.soft2.kai.tensor
+import org.soft2.kai.tensors.Kernel
 import kotlin.test.assertEquals
 
 class MultiplicationByScalar {
+
+    @Before
+    fun before() {
+        Kernel.default = CpuKernel
+    }
 
 
     @Test
@@ -29,8 +36,8 @@ class MultiplicationByScalar {
 
     @Test
     fun multiplicationWithBatch() {
-        val t = tensor(10, 3, 3 ,3 ) { it.toFloat() / 2 }.reshape(3, 3, 3)
-        val e = tensor(10, 3, 3 ,3 ) { it.toFloat() }.reshape(3, 3, 3)
+        val t = tensor(10, 3, 3 ,3 ) { it.toFloat() / 2 }.shatter()
+        val e = tensor(10, 3, 3 ,3 ) { it.toFloat() }.shatter()
 
         assertEquals(e, t * 2f)
     }

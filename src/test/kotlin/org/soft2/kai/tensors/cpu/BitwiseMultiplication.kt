@@ -1,13 +1,20 @@
 package org.soft2.kai.tensors.cpu
 
+import org.junit.Before
 import org.junit.Test
 import org.soft2.kai.eye
 import org.soft2.kai.random
 import org.soft2.kai.tensor
+import org.soft2.kai.tensors.Kernel
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 
 class BitwiseMultiplication {
+
+    @Before
+    fun before() {
+        Kernel.default = CpuKernel
+    }
 
 
     @Test
@@ -22,9 +29,9 @@ class BitwiseMultiplication {
 
     @Test
     fun multiplicationBitwiseBatch() {
-        val a = tensor(3, 2, 2 ) { it.toFloat() / 2 }.reshape(2, 2)
-        val b = tensor(2, 2 ,2 ) { it.toFloat() }.reshape(2, 2)
-        val e = tensor(3, 2, 2 ) { it.toFloat() / 2 * (it % 8) }.reshape(2, 2)
+        val a = tensor(3, 2, 2 ) { it.toFloat() / 2 }.shatter()
+        val b = tensor(2, 2 ,2 ) { it.toFloat() }.shatter()
+        val e = tensor(3, 2, 2 ) { it.toFloat() / 2 * (it % 8) }.shatter()
 
         assertEquals(e, a bitwise b)
 
