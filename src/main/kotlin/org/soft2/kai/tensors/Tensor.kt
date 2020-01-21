@@ -102,7 +102,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
             "Shape mismatch in adding two tensors $this and $t"
         }
 
-        val h = kernel.add(handle, t.handle)
+        val h = kernel.add(handle, t.handle, 1f)
         return Tensor(shape, h)
     }
 
@@ -140,15 +140,15 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         val q = if (t.shape.size > 1) t.shape[1] else 1
 
         val s = intArrayOf(shape[0], t.shape[1])
-        val c = kernel.matrixMul(handle, t.handle, n, m, q)
+        val c = kernel.mul(handle, t.handle, n, m, q)
         return Tensor(s, c)
     }
 
     fun mutable() = MutableTensor(shape, handle)
 
 
-    operator fun times(s: Float) = grad(this, ScalarMulGrad(s)) {
-            x-> x.map {it *s }
+    operator fun times(alpha: Float) = grad(this, ScalarMulGrad(alpha)) {
+        Tensor(shape, kernel.mul(handle, alpha))
     }
 
     operator fun div(s: Float) = times(1/s)

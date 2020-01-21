@@ -6,10 +6,10 @@ import org.soft2.kai.tensor
 import org.soft2.kai.tensors.Kernel
 import kotlin.test.assertEquals
 
-class MultiplicationByScalar {
+open class MultiplicationByScalar {
 
     @Before
-    fun before() {
+    open fun before() {
         Kernel.default = CpuKernel
     }
 

@@ -18,13 +18,18 @@ open class MultiplicationByTensor {
 
     @Test
     fun multiplicationByOne() {
+        val x = tensor("1 2 3", "4 5 6", "7 8 9")
+        val y = x * eye(3)
+        assertEquals(x, y)
+    }
 
+    @Test
+    fun multiplicationByBigOne() {
         val t = random(10, 10)
 
         assertEquals(t, t * eye(10))
         assertNotEquals(eye(10), t * eye(10))
     }
-
 
     @Test
     fun multiplicationByInv() {
@@ -48,7 +53,7 @@ open class MultiplicationByTensor {
 
     @Test
     fun multiplicationByOneWithBatch() {
-        val a = random(4, 3, 3).shatter()
+        val a = tensor(4, 3, 3) {it.toFloat()}.shatter()
         assertEquals(a, a * eye(3))
     }
 

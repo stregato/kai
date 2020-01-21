@@ -20,20 +20,22 @@ interface Kernel {
     fun release(h: Handle)
 
     /** Multiply two tensors with the provided shapes */
-    fun matrixMul(
+    fun mul(
         a: Handle, b: Handle,
         n: Int, m: Int, q: Int,
         beta: Float = 0f
     ):  Handle
 
-    fun add(
-        a: Handle, b: Handle,
-        alpha: Float = 1f
-    ): Handle
+    /** Multiply two tensors with the provided shapes */
+    fun mul(
+        a: Handle, alpha: Float
+    ):  Handle
+
+    fun add(a: Handle, b: Handle, alpha: Float): Handle
 
     fun get(h: Handle, offset: Int): Float
 
-    fun transpose(h: Handle, n: Int, m: Int): FloatArray
+    fun transpose(h: Handle, n: Int, m: Int): Handle
 
     fun update(h: Handle, alpha: Float, inc: Handle): Handle
 

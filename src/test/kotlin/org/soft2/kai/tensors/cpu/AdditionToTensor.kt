@@ -9,10 +9,10 @@ import org.soft2.kai.tensors.Kernel
 import org.soft2.kai.zeros
 import kotlin.test.assertEquals
 
-class AdditionToTensor {
+open class AdditionToTensor {
 
     @Before
-    fun before() {
+    open fun before() {
         Kernel.default = CpuKernel
     }
 
@@ -51,9 +51,9 @@ class AdditionToTensor {
 
     @Test
     fun additionWithDifferentBatch() {
-        val a = tensor(3, 2, 2 ) { it.toFloat() / 2 }.shatter()
+        val a = tensor(4, 2, 2 ) { it.toFloat() / 2 }.shatter()
         val b = tensor(2, 2 ,2 ) { it.toFloat() }.shatter()
-        val e = tensor(3, 2, 2 ) { it.toFloat() / 2 + it % 8 }.shatter()
+        val e = tensor(4, 2, 2 ) { it.toFloat() / 2 + it % 8 }.shatter()
 
         assertEquals(e, a+b)
     }

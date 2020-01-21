@@ -17,29 +17,30 @@ object CpuKernel: Kernel {
     override fun release(h: Handle) {
     }
 
-    override fun matrixMul(
+    override fun mul(
         a: Handle, b: Handle,
         n: Int, m: Int, q: Int,
         beta: Float
     ): Handle {
-        val ta = a as FloatArray
-        val tb = b as FloatArray
+        check( a is FloatArray ) {{ " a must be a float array" }}
+        check( b is FloatArray ) {{ " a must be a float array" }}
 
-        val ba = ta.size/n/m
-        val bb = tb.size/m/q
-        val bc = maxOf(ba,bb)
+
+        val batchA = a.size/n/m
+        val batchB = b.size/m/q
+        val bc = maxOf(batchA,batchB)
 
         val c = FloatArray(m*q*bc)
-        val stripeA = if (ba > 1) n*m else 0
-        val stripeB = if (bb > 1) m*q else 0
+        val stripeA = if (batchA > 1) n*m else 0
+        val stripeB = if (batchB > 1) m*q else 0
 
         for (h in 0 until bc) {
             for (i in 0 until n) {
                 for (j in 0 until q) {
                     var s = 0f
                     for (k in 0 until m) {
-                        val ea = ta[h * stripeA + i * n + k]
-                        val eb = tb[h * stripeB + k * q + j]
+                        val ea = a[h * stripeA + i * n + k]
+                        val eb = b[h * stripeB + k * q + j]
                         s += ea*eb
                     }
                     c[h * n * q + i * q + j] = s
@@ -49,6 +50,13 @@ object CpuKernel: Kernel {
 
         return c
     }
+
+    override fun mul(a: Handle, alpha: Float):  Handle {
+        check( a is FloatArray ) {{ " a must be a float array" }}
+
+        return a.map { it * alpha }.toFloatArray()
+    }
+
 
     override fun add(a: Handle, b: Handle, alpha: Float): Handle {
         val ta = a as FloatArray
