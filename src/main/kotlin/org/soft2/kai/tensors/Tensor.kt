@@ -13,12 +13,10 @@ import kotlin.math.sqrt
 
 open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
-    var gradient: Gradient? = null
-    var mutable: Boolean = false
+    data class Trace(val value: Tensor, val diff: C1)
 
-    var
-            origins: Array<Tensor>
-
+    var trace = Array<Trace>(0)
+    var mutable = false
 
     companion object {
         var kernel: Kernel = Kernel.default
@@ -149,11 +147,11 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         return Tensor(s, c)
     }
 
-    fun mutable() = MutableTensor(shape, handle)
-
-
     operator fun times(alpha: Float): Tensor {
         return Tensor(shape, kernel.mul(handle, alpha))
+            .trace(this) {
+                Tensor(shape, kernel.mul(it.handle, alpha))
+            }
     }
 
     operator fun div(s: Float) = times(1/s)

@@ -3,8 +3,6 @@ package org.soft2.kai.grad
 import org.soft2.kai.tensors.Tensor
 
 typealias C1 = (Tensor) -> Tensor
-typealias C2 = (Tensor, Tensor) -> Tensor
-typealias Cn = (Array<out Tensor>) -> Array<Tensor>
 
 
 abstract class Gradient (vararg origin: Tensor){
@@ -13,22 +11,21 @@ abstract class Gradient (vararg origin: Tensor){
 }
 
 
+
 typealias BackPropagation = (Tensor) -> Tensor
 
-fun trace(x: Tensor, gradient: Gradient, fn: C1): Tensor {
-    gradient.xs = arrayOf(x)
-    val y = fn(x)
-    y.gradient = gradient
-    return y
+fun Tensor.trace(x1: Tensor, d1: C1): Tensor {
+    this.trace = arrayOf(Tensor.Trace(x1, d1))
+    return this
 }
 
-fun trace(a: Tensor, b: Tensor, gradient: Gradient, fn: C2): Tensor {
-    gradient.xs = arrayOf(a,b)
-    val y = fn(a, b)
-    y.gradient = gradient
-    return y
+fun Tensor.trace(x1: Tensor, d1: C1, x2: Tensor, d2: C1): Tensor {
+    this.trace = arrayOf(Tensor.Trace(x1, d1), Tensor.Trace(x2, d2))
+    return this
 }
 
+fun Tensor.trace(x1: Tensor, d1: C1, x2: Tensor, d2: C1, x3: Tensor, d3: C1): Tensor {
+    this.trace = arrayOf(Tensor.Trace(x1, d1), Tensor.Trace(x2, d2), Tensor.Trace(x3, d3))
+    return this
+}
 
-
-fun trace( )
