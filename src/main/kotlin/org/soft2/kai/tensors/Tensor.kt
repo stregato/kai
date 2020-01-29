@@ -145,7 +145,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
         val s = intArrayOf(shape[0], t.shape[1])
         val c = kernel.mul(handle, t.handle, n, m, q)
-        return Tensor(s, c)
+        return Tensor(s, c).trace(this, { it * t.t()}, t, { this.t() * it } )
     }
 
     operator fun times(alpha: Float): Tensor {

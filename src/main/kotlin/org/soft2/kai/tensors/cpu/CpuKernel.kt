@@ -30,7 +30,7 @@ object CpuKernel: Kernel {
         val batchB = b.size/m/q
         val bc = maxOf(batchA,batchB)
 
-        val c = FloatArray(m*q*bc)
+        val c = FloatArray(n*q*bc)
         val stripeA = if (batchA > 1) n*m else 0
         val stripeB = if (batchB > 1) m*q else 0
 
@@ -39,7 +39,7 @@ object CpuKernel: Kernel {
                 for (j in 0 until q) {
                     var s = 0f
                     for (k in 0 until m) {
-                        val ea = a[h * stripeA + i * n + k]
+                        val ea = a[h * stripeA + i * m + k]
                         val eb = b[h * stripeB + k * q + j]
                         s += ea*eb
                     }
