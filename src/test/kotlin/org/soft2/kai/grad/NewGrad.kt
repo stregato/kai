@@ -4,22 +4,6 @@ import org.junit.Test
 import org.soft2.kai.tensors.Tensor
 import kotlin.math.sin
 
-typealias C1 = (Tensor) -> Tensor
-typealias C2 = (Tensor, Tensor) -> Tensor
-typealias CA = (Tensor, Float) -> Tensor
-
-fun grad(d: C1, f: C1): C1 {
-    return f
-}
-
-//fun trace(t: Tensor, (Tensor) -> Tensor): Tensor {
-//
-//}
-
-fun trace(t: Tensor, f: (Tensor) -> Tensor): Tensor {
-
-}
-
 class NewGrad {
 
     @Test

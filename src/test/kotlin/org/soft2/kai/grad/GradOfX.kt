@@ -13,12 +13,11 @@ class GradOfX {
     fun gradOfX() {
 
         val x = random(2,3)
-        x * 1f
-
-
+        val y = x * 3f
         val z = tensor("1 0 0", "0 1 0")
+        y.backpropagate(z)
 
-        assertEquals(z, x.gradient(z))
+        assertEquals(z*3f, x.gradient)
 
     }
 }

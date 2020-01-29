@@ -15,8 +15,9 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
     data class Trace(val value: Tensor, val diff: C1)
 
-    var trace = Array<Trace>(0)
+    var traces = arrayOf<Trace>()
     var mutable = false
+    var gradient: Tensor? = null
 
     companion object {
         var kernel: Kernel = Kernel.default
@@ -86,7 +87,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
     fun unshatter() = Tensor(intArrayOf(batch, *shape), handle)
 
 
-    operator fun rem(t: Tensor) = trace(this, t, TensorMulBP()) { _, t ->
+    operator fun rem(t: Tensor) {
         require(volume == t.volume) {
             "Matrix $this and $t have not the same volume"
         }
