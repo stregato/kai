@@ -3,11 +3,12 @@ package org.soft2.kai.grad
 import org.soft2.kai.tensors.Tensor
 
 
-class TensorMulGrad(val ): BackPropagation {
+class TensorMulBP(a: Tensor): BackPropagation {
+    private val at: Tensor = a.t()
+    override fun invoke(x: Tensor) = at * x
+}
 
 
-    override fun invoke(p1: Tensor): Tensor {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
+fun tensorMulBP(a: Tensor, b: Tensor, ) {
+    if ( )
 }

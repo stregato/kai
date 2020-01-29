@@ -1,20 +1,19 @@
 package org.soft2.kai.grad
 
+import jdk.nashorn.internal.ir.TernaryNode
 import org.soft2.kai.tensors.Tensor
 
-class ScalarMulGrad(val a: Float): BackPropagation {
-    override fun invoke(p1: Tensor): Tensor {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class ScalarMulBP(val a: Float): BackPropagation {
+    override fun invoke(x: Tensor): Tensor {
+        return x * a
     }
-
 }
-    override operator fun invoke(t: Tensor): Tensor {
-        return t * a
-    }
 
 
-fun scalarMulGrad(val a: Float, x: Tensor) {
+fun scalarMulBP(val a: Float, x: Tensor) {
     x.gradient = Gradient(x)
+
+    y.
 }
 
 

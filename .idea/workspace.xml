@@ -2,46 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Transpose.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/AdditionToTensor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/MultiplicationByScalar.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/Transpose.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/GradientCollection.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/ScalarMulBP.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/TensorMulBP.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/GradOfMultiplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/GradOfX.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/NewGrad.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Kernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Kernel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/Gradient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/Gradient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/operations.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/MutableTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/MutableTensor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaKernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaKernel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToTensor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/MultiplicationByTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/MultiplicationByTensor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Kernel$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Kernel$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Kernel$DefaultImpls.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Kernel$DefaultImpls.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Kernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Kernel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Tensor$times$5$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Tensor$times$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Tensor$times$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Tensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/Tensor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/cpu/CpuKernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/soft2/kai/tensors/cpu/CpuKernel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar$additionOnBatch$e$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar$additionOnBatch$e$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar$additionOnBatch$t$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar$additionOnBatch$t$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToScalar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithBatch$a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithBatch$a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithBatch$b$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithBatch$b$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithBatch$e$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithBatch$e$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithDifferentBatch$a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithDifferentBatch$a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithDifferentBatch$b$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithDifferentBatch$b$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithDifferentBatch$e$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor$additionWithDifferentBatch$e$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/AdditionToTensor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication$multiplicationBitwiseBatch$a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication$multiplicationBitwiseBatch$a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication$multiplicationBitwiseBatch$b$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication$multiplicationBitwiseBatch$b$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication$multiplicationBitwiseBatch$e$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication$multiplicationBitwiseBatch$e$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/BitwiseMultiplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar$multiplicationWithBatch$e$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar$multiplicationWithBatch$e$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar$multiplicationWithBatch$t$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar$multiplicationWithBatch$t$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByScalar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByTensor$multiplicationWithBatch$a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByTensor$multiplicationWithBatch$a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByTensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/soft2/kai/tensors/cpu/MultiplicationByTensor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -243,10 +216,15 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="99" y="96" width="2362" height="1245" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578077719852" />
-    <state x="750" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1578333560817">
+    <state x="1000" y="331" key="#com.intellij.ide.util.MemberChooser" timestamp="1580071220349">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="750" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1579963965588" />
+    <state x="1000" y="331" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1580071220349" />
+    <state x="686" y="0" width="546" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579955097566">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="750" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1578333560817" />
+    <state x="686" y="0" width="546" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579955097566" />
     <state x="742" y="181" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1578038168909">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -259,7 +237,7 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="854" y="346" key="EnvironmentVariablesDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578419855061" />
-    <state width="2514" height="467" key="GridCell.Tab.0.bottom" timestamp="1579624291750">
+    <state width="2514" height="467" key="GridCell.Tab.0.bottom" timestamp="1579626212614">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.bottom/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
@@ -267,8 +245,8 @@
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1579624291750" />
-    <state width="2514" height="467" key="GridCell.Tab.0.center" timestamp="1579624291750">
+    <state width="2514" height="467" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212614" />
+    <state width="2514" height="467" key="GridCell.Tab.0.center" timestamp="1579626212614">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.center/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
@@ -276,8 +254,8 @@
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1579624291750" />
-    <state width="2514" height="467" key="GridCell.Tab.0.left" timestamp="1579624291750">
+    <state width="2514" height="467" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212614" />
+    <state width="2514" height="467" key="GridCell.Tab.0.left" timestamp="1579626212613">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.left/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
@@ -285,8 +263,8 @@
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1579624291750" />
-    <state width="2514" height="467" key="GridCell.Tab.0.right" timestamp="1579624291750">
+    <state width="2514" height="467" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212613" />
+    <state width="2514" height="467" key="GridCell.Tab.0.right" timestamp="1579626212614">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.right/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
@@ -294,39 +272,39 @@
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1579624291750" />
-    <state width="2514" height="467" key="GridCell.Tab.1.bottom" timestamp="1579624149089">
+    <state width="2514" height="467" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212614" />
+    <state width="2514" height="467" key="GridCell.Tab.1.bottom" timestamp="1579626212616">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1920" height="359" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
     <state width="2514" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913384" />
-    <state width="2514" height="467" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1579624149089" />
-    <state width="2514" height="467" key="GridCell.Tab.1.center" timestamp="1579624149089">
+    <state width="2514" height="467" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212616" />
+    <state width="2514" height="467" key="GridCell.Tab.1.center" timestamp="1579626212615">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.center/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1920" height="359" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
     <state width="2514" height="470" key="GridCell.Tab.1.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.center/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
-    <state width="2514" height="467" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1579624149089" />
-    <state width="2514" height="467" key="GridCell.Tab.1.left" timestamp="1579624149088">
+    <state width="2514" height="467" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212615" />
+    <state width="2514" height="467" key="GridCell.Tab.1.left" timestamp="1579626212615">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.left/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1920" height="359" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
     <state width="2514" height="470" key="GridCell.Tab.1.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.left/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
-    <state width="2514" height="467" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1579624149088" />
-    <state width="2514" height="467" key="GridCell.Tab.1.right" timestamp="1579624149089">
+    <state width="2514" height="467" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212615" />
+    <state width="2514" height="467" key="GridCell.Tab.1.right" timestamp="1579626212615">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.right/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1920" height="359" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
     <state width="2514" height="470" key="GridCell.Tab.1.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.right/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913384" />
-    <state width="2514" height="467" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1579624149089" />
+    <state width="2514" height="467" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212615" />
     <state x="613" y="219" key="SettingsEditor" timestamp="1578511850082">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>

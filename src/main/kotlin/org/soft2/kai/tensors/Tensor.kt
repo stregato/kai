@@ -14,6 +14,11 @@ import kotlin.math.sqrt
 open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
     var gradient: Gradient? = null
+    var mutable: Boolean = false
+
+    var
+            origins: Array<Tensor>
+
 
     companion object {
         var kernel: Kernel = Kernel.default
@@ -83,7 +88,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
     fun unshatter() = Tensor(intArrayOf(batch, *shape), handle)
 
 
-    operator fun rem(t: Tensor) = grad(this, t, TensorMulGrad()) { _, t ->
+    operator fun rem(t: Tensor) = trace(this, t, TensorMulBP()) { _, t ->
         require(volume == t.volume) {
             "Matrix $this and $t have not the same volume"
         }
@@ -147,8 +152,8 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
     fun mutable() = MutableTensor(shape, handle)
 
 
-    operator fun times(alpha: Float) = grad(this, ScalarMulGrad(alpha)) {
-        Tensor(shape, kernel.mul(handle, alpha))
+    operator fun times(alpha: Float): Tensor {
+        return Tensor(shape, kernel.mul(handle, alpha))
     }
 
     operator fun div(s: Float) = times(1/s)
@@ -211,6 +216,14 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
             shape.contentEquals(any.shape) && kernel.toFloatArray(handle).contentEquals(kernel.toFloatArray(any.handle))
         else
             false
+
+
+    fun update(alpha: Float, A: Tensor) {
+        check( mutable ) {
+            "Update is invalid on immutable tensors"
+        }
+        kernel.update(handle, alpha, A.handle)
+    }
 
 
     protected fun finalize() {
