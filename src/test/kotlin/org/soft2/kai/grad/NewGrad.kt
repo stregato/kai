@@ -12,7 +12,7 @@ class NewGrad {
 
 
         fun sin(x: Tensor) {
-            x.map { sin(it.toDouble()).toFloat() } .trace (x, ::cos)
+            x.map { sin(it.toDouble()).toFloat() } .trace (x, "Sin", ::cos)
         }
     }
 
@@ -21,7 +21,7 @@ class NewGrad {
     fun scaleTest() {
 
         fun scale(x: Tensor, alpha: Float) {
-            x.map { it*alpha }.trace(x) { it*alpha }
+            x.map { it*alpha }.trace(x, "Scale") { it*alpha }
         }
 
     }

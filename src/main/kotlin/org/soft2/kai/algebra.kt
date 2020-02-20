@@ -50,6 +50,9 @@ fun tensor(vararg lines: String): Tensor {
 fun tensor(vararg elements: Float) =
     Tensor(intArrayOf(elements.size), elements)
 
+fun tensor(vararg elements: Double) =
+    Tensor(intArrayOf(elements.size), elements.map { it.toFloat() })
+
 fun tensor(n: Int, m: Int, vararg elements: Float) =
     Tensor(intArrayOf(n,m), elements)
 
@@ -64,7 +67,7 @@ fun tensor(shape: IntArray, elements: FloatArray) =
 
 
 
-private val eyeCache = mutableMapOf<Int, Tensor>()
+val eyeCache = mutableMapOf<Int, Tensor>()
 
 /**
  * Create a tensor identity with specified number of rows n

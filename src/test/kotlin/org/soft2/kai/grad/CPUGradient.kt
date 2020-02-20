@@ -9,9 +9,9 @@ import org.soft2.kai.tensors.Kernel
 import org.soft2.kai.tensors.cpu.CpuKernel
 import kotlin.test.assertEquals
 
-class GradOfX {
+open class CPUGradient {
     @Before
-    fun before() {
+    open fun before() {
         Kernel.default = CpuKernel
     }
 
@@ -20,22 +20,33 @@ class GradOfX {
         val x = tensor("1 2 3", "4 5 6")
         val W = tensor("1 1", "2 2", "3 3")
         val y = x*W
-        y.backpropagate(eye(2))
+        val grad = y gradient eye(2)
 
-        assertEquals(W.t(), x.gradient)
-        assertEquals(x.t(), W.gradient)
+        assertEquals(W.t(), grad[0])
+        assertEquals(x.t(), grad[1])
 
     }
 
     @Test
-    fun gradOf3X() {
+    fun gradOfAdd() {
+        val x = tensor("1 2 3", "4 5 6")
+        val y = tensor("1 1 1", "2 2 2")
+        val z = x + y
+        val e = tensor(2, 3) { 1f }
+        val grad = z gradient e
 
+        assertEquals(e, grad[0])
+        assertEquals(e, grad[1])
+    }
+
+
+    @Test
+    fun gradOf3X() {
         val x = random(2,3)
         val y = x * 3f
         val z = tensor("1 0 0", "0 1 0")
-        y.backpropagate(z)
+        val grad = y gradient  z
 
-        assertEquals(z*3f, x.gradient)
-
+        assertEquals(z*3f, grad[0])
     }
 }

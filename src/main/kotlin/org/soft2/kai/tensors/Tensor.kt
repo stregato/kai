@@ -1,5 +1,6 @@
 package org.soft2.kai.tensors
 
+import org.soft2.kai.eyeCache
 import org.soft2.kai.grad.*
 import kotlin.math.max
 import kotlin.math.pow
@@ -13,11 +14,8 @@ import kotlin.math.sqrt
 
 open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
-    data class Trace(val value: Tensor, val diff: C1)
-
-    var traces = arrayOf<Trace>()
+    var flow = arrayOf<Step>()
     var mutable = false
-    var gradient: Tensor? = null
 
     companion object {
         var kernel: Kernel = Kernel.default
@@ -44,6 +42,10 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
             return sqrt(v/(e.size-1))
         }
 
+    val norm0: Float
+        get() {
+            return kernel.norm0(handle)
+        }
 
     fun hasElements(vararg e: Float) = kernel.toFloatArray(handle).contentEquals(e)
 
@@ -60,6 +62,22 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
             "Tensor $this has size or batch different than 1"
         }
         return toFloatArray()[0]
+    }
+
+    infix fun batchOf(batchSize: Int): Tensor {
+        val d = shape.last()/batchSize
+        val s = if ( d == 1 ) shape.dropLast(1).toIntArray() else shape.mapIndexed { index, i ->
+            if (index < shape.size-1 ) i else d
+        }.toIntArray()
+        return Tensor(s, handle)
+    }
+
+    fun makeMutable(): Tensor {
+        check( !eyeCache.containsValue(this) ) {
+            "Cached tensors cannot be mutable. Do not use eye for mutable tensors"
+        }
+        mutable = true
+        return this
     }
 
     fun expand(vararg targetShape: Int): Tensor {
@@ -98,6 +116,9 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
     operator fun plus(f: Float) =
         Tensor(shape,  kernel.toFloatArray(handle).map { it + f }.toFloatArray())
+            .trace(this, "Scalar Addition") { it }
+
+    operator fun plus(d: Double) = plus(d.toFloat())
 
     operator fun plus(i: Int) = plus(i.toFloat())
 
@@ -107,11 +128,14 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         }
 
         val h = kernel.add(handle, t.handle, 1f)
-        return Tensor(shape, h)
+        return Tensor(shape, h).trace(this, "Addition 0", {it}, t, "Addition 1", {it})
     }
 
     operator fun minus(f: Float) =
         Tensor(shape,  kernel.toFloatArray(handle).map { it - f }.toFloatArray())
+            .trace(this, "Float Subtraction") { it * -1f }
+
+    operator fun minus(d: Double) = minus(d.toFloat())
 
     operator fun minus(i: Int) = minus(i.toFloat())
 
@@ -124,6 +148,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         return Tensor(shape, h)
     }
 
+
     operator fun times(i: Int) = times(i.toFloat())
 
     operator fun times(t: Tensor): Tensor {
@@ -133,24 +158,28 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         require(t.shape.size < 3) {
             "Invalid shape in tensor $t for matrix multiplication"
         }
-        require ( shape[1] == t.shape[0] ) {
+        require ( shape.getOrElse(1) {1} == t.shape[0] ) {
             "Incompatible shape size between $this and $t"
         }
         require( batch == t.batch || batch == 1 || t.batch == 1) {
             "Incompatible batch between $this and $t"
         }
+
         val n = shape[0]
         val m = if (shape.size > 1) shape[1] else 1
         val q = if (t.shape.size > 1) t.shape[1] else 1
 
-        val s = intArrayOf(shape[0], t.shape[1])
+        val s = if (q > 1 ) intArrayOf(n, q) else intArrayOf(n)
         val c = kernel.mul(handle, t.handle, n, m, q)
-        return Tensor(s, c).trace(this, { it * t.t()}, t, { this.t() * it } )
+        return Tensor(s, c).trace(this, "Multiplication 0", { it * t.t()},
+                                   t, "Multiplication 1", { this.t() * it } )
     }
+
+    operator fun times(alpha: Double) = times(alpha.toFloat())
 
     operator fun times(alpha: Float): Tensor {
         return Tensor(shape, kernel.mul(handle, alpha))
-            .trace(this) {
+            .trace(this, "Scalar Multiplication") {
                 Tensor(shape, kernel.mul(it.handle, alpha))
             }
     }
@@ -191,7 +220,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
         val n = shape[0]
         val m = shape.getOrElse(1) { 1 }
-        val ns = shape.reversed().toIntArray()
+        val ns = intArrayOf(m, n)
         val nh = if ( m == 1 ) handle else kernel.transpose(handle, n, m)
 
         return Tensor(ns, nh)
@@ -210,16 +239,16 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         return loc
     }
 
-    override fun equals(any: Any?) =
-        if ( any is Tensor )
-            shape.contentEquals(any.shape) && kernel.toFloatArray(handle).contentEquals(kernel.toFloatArray(any.handle))
+    override fun equals(other: Any?) =
+        if ( other is Tensor )
+            shape.contentEquals(other.shape) && kernel.toFloatArray(handle).contentEquals(kernel.toFloatArray(other.handle))
         else
             false
 
 
     fun update(alpha: Float, A: Tensor) {
         check( mutable ) {
-            "Update is invalid on immutable tensors"
+            "Update is invalid on immutable tensors. Call makeMutable to make a tensor mutable"
         }
         kernel.update(handle, alpha, A.handle)
     }
@@ -229,7 +258,11 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         kernel.release(handle)
     }
 
-
+    override fun hashCode(): Int {
+        var result = shape.contentHashCode()
+        result = 31 * result + handle.hashCode()
+        return result
+    }
 
 
 }
@@ -247,4 +280,3 @@ fun IntArray.prod(): Int {
     }
     return prod
 }
-

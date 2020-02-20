@@ -2,18 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/GradientCollection.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/ScalarMulBP.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/TensorMulBP.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/GradOfMultiplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/GradOfX.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/NewGrad.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Flow.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/BackPropagation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/CUDAGrad.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Update.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cuda/Update.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/algebra.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/algebra.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/Gradient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/Gradient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/operations.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/MutableTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/MutableTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Cache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Kernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Kernel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaKernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaKernel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/GradOfMultiplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/GradOfX.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/CPUGradient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/NewGrad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/NewGrad.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,7 @@
         <option value="Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -67,54 +73,70 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Transpose">
-    <configuration name="AdditionToScalar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BackPropagation.xor">
+    <configuration name="BackPropagation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kai" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
+          <option name="PATTERN" value="org.soft2.kai.grad.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.AdditionToScalar" />
+      <option name="PACKAGE_NAME" value="org.soft2.kai.grad" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.grad.BackPropagation" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdditionToTensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackPropagation.simpleBack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kai" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cuda.*" />
+          <option name="PATTERN" value="org.soft2.kai.grad.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cuda" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cuda.AdditionToTensor" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdditionToTensor.additionWithDifferentBatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kai" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cpu.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.AdditionToTensor" />
-      <option name="METHOD_NAME" value="additionWithDifferentBatch" />
+      <option name="PACKAGE_NAME" value="org.soft2.kai.grad" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.grad.BackPropagation" />
+      <option name="METHOD_NAME" value="simpleBack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiplicationByScalar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BackPropagation.xor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.grad.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.grad" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.grad.BackPropagation" />
+      <option name="METHOD_NAME" value="xor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.tensors.cuda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cuda" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cuda.Update" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Update.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kai" />
       <extension name="coverage">
         <pattern>
@@ -123,54 +145,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cpu" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.MultiplicationByScalar" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MultiplicationByTensor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kai" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cuda.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cuda" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cuda.MultiplicationByTensor" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <envs>
-        <env name="java.path.library" value="./lib" />
-      </envs>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Transpose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kai" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.soft2.kai.tensors.cuda.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.soft2.kai.tensors.cuda" />
-      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cuda.Transpose" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.tensors.cpu.Update" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Transpose" />
-        <item itemvalue="JUnit.AdditionToTensor.additionWithDifferentBatch" />
-        <item itemvalue="JUnit.AdditionToTensor" />
-        <item itemvalue="JUnit.MultiplicationByScalar" />
-        <item itemvalue="JUnit.AdditionToScalar" />
+        <item itemvalue="JUnit.BackPropagation.xor" />
+        <item itemvalue="JUnit.BackPropagation" />
+        <item itemvalue="JUnit.BackPropagation.simpleBack" />
+        <item itemvalue="JUnit.Update" />
+        <item itemvalue="JUnit.Update.update" />
       </list>
     </recent_temporary>
   </component>
@@ -229,91 +217,93 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="742" y="181" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578038168909" />
-    <state width="463" height="466" key="DebuggerActiveHint" timestamp="1578936692379">
+    <state width="606" height="467" key="DebuggerActiveHint" timestamp="1582135786274">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state width="454" height="350" key="DebuggerActiveHint/0.0.1920.1080@0.0.1920.1080" timestamp="1581664270573" />
     <state width="463" height="466" key="DebuggerActiveHint/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578936692379" />
+    <state width="606" height="467" key="DebuggerActiveHint/0.0.2560.1440@0.0.2560.1440" timestamp="1582135786274" />
     <state x="854" y="346" key="EnvironmentVariablesDialog" timestamp="1578419855061">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="854" y="346" key="EnvironmentVariablesDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578419855061" />
-    <state width="2514" height="467" key="GridCell.Tab.0.bottom" timestamp="1579626212614">
+    <state width="2500" height="280" key="GridCell.Tab.0.bottom" timestamp="1582137119839">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.bottom/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
-    <state width="1874" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678320" />
+    <state width="1874" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212614" />
-    <state width="2514" height="467" key="GridCell.Tab.0.center" timestamp="1579626212614">
+    <state width="2500" height="280" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582137119839" />
+    <state width="2500" height="280" key="GridCell.Tab.0.center" timestamp="1582137119838">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.center/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
-    <state width="1874" height="358" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678320" />
+    <state width="1874" height="207" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212614" />
-    <state width="2514" height="467" key="GridCell.Tab.0.left" timestamp="1579626212613">
+    <state width="2500" height="280" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582137119838" />
+    <state width="2500" height="280" key="GridCell.Tab.0.left" timestamp="1582137119838">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.left/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
-    <state width="1874" height="358" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678320" />
+    <state width="1874" height="207" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924969" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212613" />
-    <state width="2514" height="467" key="GridCell.Tab.0.right" timestamp="1579626212614">
+    <state width="2500" height="280" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582137119838" />
+    <state width="2500" height="280" key="GridCell.Tab.0.right" timestamp="1582137119838">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.0.right/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
-    <state width="1874" height="358" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678320" />
+    <state width="1874" height="207" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
-    <state width="2514" height="467" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212614" />
-    <state width="2514" height="467" key="GridCell.Tab.1.bottom" timestamp="1579626212616">
+    <state width="2500" height="280" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582137119838" />
+    <state width="2500" height="280" key="GridCell.Tab.1.bottom" timestamp="1582136874921">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
-    <state width="1920" height="359" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
+    <state width="1874" height="207" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913384" />
-    <state width="2514" height="467" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212616" />
-    <state width="2514" height="467" key="GridCell.Tab.1.center" timestamp="1579626212615">
+    <state width="2500" height="280" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582136874921" />
+    <state width="2500" height="280" key="GridCell.Tab.1.center" timestamp="1582136874920">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.center/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
-    <state width="1920" height="359" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
+    <state width="1874" height="207" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.center/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
-    <state width="2514" height="467" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212615" />
-    <state width="2514" height="467" key="GridCell.Tab.1.left" timestamp="1579626212615">
+    <state width="2500" height="280" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582136874920" />
+    <state width="2500" height="280" key="GridCell.Tab.1.left" timestamp="1582136874920">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.left/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
-    <state width="1920" height="359" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
+    <state width="1874" height="207" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.left/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
-    <state width="2514" height="467" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212615" />
-    <state width="2514" height="467" key="GridCell.Tab.1.right" timestamp="1579626212615">
+    <state width="2500" height="280" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582136874920" />
+    <state width="2500" height="280" key="GridCell.Tab.1.right" timestamp="1582136874921">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1920" height="362" key="GridCell.Tab.1.right/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
-    <state width="1920" height="359" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1578768678147" />
+    <state width="1874" height="207" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.right/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913384" />
-    <state width="2514" height="467" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1579626212615" />
+    <state width="2500" height="280" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582136874921" />
     <state x="613" y="219" key="SettingsEditor" timestamp="1578511850082">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="460" y="164" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1578210302967" />
     <state x="613" y="219" key="SettingsEditor/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578511850082" />
-    <state x="688" y="263" width="540" height="524" key="StructurePopup" timestamp="1578124084908">
+    <state x="688" y="263" width="546" height="524" key="StructurePopup" timestamp="1581257524531">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="688" y="263" width="540" height="524" key="StructurePopup/0.0.1920.1080@0.0.1920.1080" timestamp="1578124084908" />
+    <state x="688" y="263" width="546" height="524" key="StructurePopup/0.0.1920.1080@0.0.1920.1080" timestamp="1581257524531" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1578210323285">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -323,17 +313,21 @@
     </state>
     <state x="0" y="0" width="1920" height="1080" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578501097775" />
     <state x="959" y="535" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578590215247" />
-    <state x="623" y="247" key="run.anything.popup" timestamp="1578760313531">
+    <state x="520" y="279" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1580329914813">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="247" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1578760313531" />
+    <state x="520" y="279" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080@0.0.1920.1080" timestamp="1580329914813" />
+    <state x="623" y="247" key="run.anything.popup" timestamp="1581238578005">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="247" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1581238578005" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestTensor.kt</url>
-          <line>142</line>
+          <line>143</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
@@ -364,11 +358,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaKernel.kt</url>
-          <line>161</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="23" />
+          <line>165</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/CPUGradient.kt</url>
+          <line>19</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Update.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Cache.kt</url>
+          <line>20</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/BackPropagation.kt</url>
+          <line>72</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

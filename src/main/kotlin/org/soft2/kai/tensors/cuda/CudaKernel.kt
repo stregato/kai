@@ -165,18 +165,25 @@ object CudaKernel: Kernel {
         JCublas.cublasAlloc(a.size, Sizeof.FLOAT, p)
         JCublas2.cublasSgeam(cublasHandle, cublasOperation.CUBLAS_OP_T, cublasOperation.CUBLAS_OP_N,
                              m, n,
-                             pOne, a.pointer, n,
-                             pZero, a.pointer, n,
-                             p, n)
+                             pOne, a.pointer, m,
+                             pZero, a.pointer, m,
+                             p, m)
 
         return CudaHandle(a.size, p)
     }
 
-    override fun update(h: Handle, alpha: Float, inc: Handle): Handle {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun update(a: Handle, alpha: Float, b: Handle) {
+        check(a is CudaHandle) { " a must be CUDA handle" }
+        check(b is CudaHandle) { " b must be CUDA handle" }
+        check(a.size == b.size) { "a and b must have same size" }
+
+        JCublas2.cublasSaxpy(cublasHandle, a.size,
+                             Pointer.to(floatArrayOf(alpha)),
+                             b.pointer, 1,
+                             a.pointer, 1)
     }
 
-    override fun norm(handle: Handle): Float {
+    override fun norm0(handle: Handle): Float {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

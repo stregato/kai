@@ -17,21 +17,27 @@ object Cache {
 
     }
 
+    private fun track(t: Tensor): Tensor {
+        tensorsInCache.add(t)
+        return t
+    }
+
+    val tensorsInCache = HashSet<Tensor>()
     private val fillCache = mutableMapOf<FillKey, Tensor>()
     private val eyeCache = mutableMapOf<Int, Tensor>()
 
     fun eye(n: Int): Tensor {
-        return eyeCache.getOrPut(n) {
+        return track( eyeCache.getOrPut(n) {
             eyeFun(n)
-        }
+        } )
     }
 
     fun fill(alpha: Float, vararg shape: Int, batch: Int = 1): Tensor {
         val size = shape.prod() * batch
         val key = FillKey(alpha, shape)
-        return fillCache.getOrPut(key) {
+        return track(fillCache.getOrPut(key) {
             Tensor(shape, FloatArray(size) {alpha})
-        }
+        })
     }
 
 }

@@ -2,6 +2,7 @@ package org.soft2.kai.tensors.cpu
 
 import org.soft2.kai.tensors.Handle
 import org.soft2.kai.tensors.Kernel
+import kotlin.math.absoluteValue
 import kotlin.math.max
 import kotlin.math.sqrt
 
@@ -103,7 +104,7 @@ object CpuKernel: Kernel {
         }
     }
 
-    override fun norm(a: Handle) = sqrt((bwMul(a,a) as FloatArray)[0])
+    override fun norm0(a: Handle) = (a as FloatArray).map { it.absoluteValue }.sum()
 
     override fun bwMul(a: Handle, b: Handle): Handle {
         val fa = a as FloatArray

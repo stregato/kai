@@ -37,9 +37,9 @@ interface Kernel {
 
     fun transpose(h: Handle, n: Int, m: Int): Handle
 
-    fun update(h: Handle, alpha: Float, inc: Handle): Handle
+    fun update(h: Handle, alpha: Float, inc: Handle)
 
-    fun norm(handle: Handle): Float
+    fun norm0(handle: Handle): Float
 
     fun bwMul(a: Handle, b: Handle): Handle
 
