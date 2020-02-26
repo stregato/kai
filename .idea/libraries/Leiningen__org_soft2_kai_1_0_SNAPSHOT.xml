@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: org.soft2/kai:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/soft2/kai/1.0-SNAPSHOT/kai-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

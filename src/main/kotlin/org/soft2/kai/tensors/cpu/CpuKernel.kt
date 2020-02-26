@@ -95,13 +95,13 @@ object CpuKernel: Kernel {
     }
 
     override fun update(h: Handle, alpha: Float, A: Handle) {
-        val th = h as FloatArray
-        val tA = A as FloatArray
-        val volume = tA.size
+        check(h is FloatArray) { "Handle h must be a float array"}
+        check(A is FloatArray) { "Handle A must be a float array"}
 
-        th.indices.forEach {i ->
-            th[i] += alpha * tA[i % volume]
+        for (i in 0 until max(h.size, A.size)) {
+            h[i % h.size] += alpha * A[i % A.size]
         }
+
     }
 
     override fun norm0(a: Handle) = (a as FloatArray).map { it.absoluteValue }.sum()
