@@ -1,10 +1,7 @@
 package org.soft2.kai.tensors
 
-import org.soft2.kai.eyeCache
 import org.soft2.kai.grad.*
 import kotlin.math.max
-import kotlin.math.pow
-import kotlin.math.sqrt
 
 
 /**
@@ -12,8 +9,9 @@ import kotlin.math.sqrt
  */
 
 
-open class Tensor(val shape: IntArray, internal val handle: Handle) {
+open class Tensor(val shape: IntArray, val batch: Int, internal val handle: Handle) {
 
+    val volume = shape.dot()
     var flow = arrayOf<Step>()
     var mutable = false
 
@@ -21,55 +19,21 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         var kernel: Kernel = Kernel.default
     }
 
-    constructor(shape: IntArray, elements: FloatArray): this(shape, kernel.allocate(elements))
-
-    private val volume = shape.prod()
-
-    /** when greater than 1, the tensor is actually a batch of defined shape */
-    val batch = kernel.size(handle) / volume
-
-    val mean: Float
-        get() = sum / volume / batch
-
-    val sum: Float
-        get() = toFloatArray().sum()
-
-    val std: Float
-        get() {
-            val e = toFloatArray()
-            val m = e.sum() / volume / batch
-            val v = e.fold(0f) { acc, fl ->  acc + (fl-m).pow(2) }
-            return sqrt(v/(e.size-1))
+    constructor(shape: IntArray, batch: Int, elements: FloatArray): this(shape, batch, kernel.allocate(elements)) {
+        check(batch == elements.size/volume) {
+            "Volume $volume by batch $batch different then elements size ${elements.size}"
         }
-
-    val norm0: Float
-        get() {
-            return kernel.norm0(handle)
-        }
-
-    fun hasElements(vararg e: Float) = kernel.toFloatArray(handle).contentEquals(e)
-
-    fun hasElements(s: String) = hasElements(
-        *s.split("\\s+".toRegex()).map { it.toFloat() }.toFloatArray())
-
-    fun toFloatArray() = kernel.toFloatArray(handle)
-
-    /**
-     * Convert a tensor to float. It requires to tensor to have volume 1 and batch 1
-     */
-    fun foFloat(): Float {
-        check(volume == 1 && batch == 1) {
-            "Tensor $this has size or batch different than 1"
-        }
-        return toFloatArray()[0]
     }
 
-    infix fun batchOf(batchSize: Int): Tensor {
-        val d = shape.last()/batchSize
-        val s = if ( d == 1 ) shape.dropLast(1).toIntArray() else shape.mapIndexed { index, i ->
-            if (index < shape.size-1 ) i else d
-        }.toIntArray()
-        return Tensor(s, handle)
+    fun hasElements(vararg e: Number) = kernel.toFloatArray(handle).contentEquals(e.map { it.toFloat() }.toFloatArray())
+
+    /** Extract the content of the tensor */
+    fun toFloatArray() = kernel.toFloatArray(handle)
+
+    /** Convert a tensor to float. It requires to tensor to have volume 1 and batch 1*/
+    fun foFloat(): Float {
+        check(volume == 1 && batch == 1) { "Tensor $this has size or batch different than 1" }
+        return toFloatArray()[0]
     }
 
     fun makeMutable(): Tensor {
@@ -80,42 +44,55 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         return this
     }
 
-    fun expand(vararg targetShape: Int): Tensor {
-        val targetVolume = targetShape.prod()
-        check( targetVolume > volume && targetVolume % volume == 0) {
-            "target shape must be multiple of shape"
-        }
+//    fun expand(vararg targetShape: Int): Tensor {
+//        val targetVolume = targetShape.dot()
+//        check( targetVolume > volume && targetVolume % volume == 0) {
+//            "target shape must be multiple of shape"
+//        }
+//
+//        return Tensor(targetShape, batch, kernel.expand(handle, volume, targetVolume))
+//    }
 
-        return Tensor(targetShape, kernel.expand(handle, volume, targetVolume))
+    /** Reshape the tensor so to have a different batch size */
+    fun rebatch(newBatch: Int): Tensor {
+        val d = shape.last()/newBatch
+        val s = if ( d == 1 ) shape.dropLast(1).toIntArray() else shape.mapIndexed { index, i ->
+            if (index < shape.size-1 ) i else d
+        }.toIntArray()
+        return Tensor(s, newBatch, handle)
+    }
+
+
+    /** Create a new tensor with same elements but different shape */
+    fun reshape(vararg s: Int): Tensor {
+        val newBatch = volume * batch / s.dot()
+        return Tensor(s, newBatch, handle)
+    }
+
+    /** Collapse a tensor dimensions to batch */
+    fun shatter(dims: Int = 1): Tensor {
+        val newShape = shape.drop(dims).toIntArray()
+        val newBatch = volume * batch / newShape.dot()
+        return Tensor(newShape, newBatch, handle)
     }
 
     /**
-     * Create a new tensor with same elements but different shape
+     * Merge a batch tensor by converting the batch to a dimension in the shape
      */
-    fun reshape(vararg s: Int) = Tensor(s, handle)
+    fun unshatter() = Tensor(intArrayOf(batch, *shape), 1, handle)
 
-    /**
-     * Collapse a tensor dimensions to batch
-     */
-    fun shatter(dims: Int = 1) = Tensor(shape.drop(dims).toIntArray(), handle)
-
-    /**
-     * Unsqueeze a tensor converting the batch to a dimension in the shape
-     */
-    fun unshatter() = Tensor(intArrayOf(batch, *shape), handle)
-
-
-    operator fun rem(t: Tensor) {
+    /** Dot matrix multiplication */
+    operator fun rem(t: Tensor): Tensor {
         require(volume == t.volume) {
             "Matrix $this and $t have not the same volume"
         }
 
         val h = kernel.bwMul(handle, t.handle)
-        Tensor(intArrayOf(1), h)
+        return Tensor(intArrayOf(1), batch, h)
     }
 
     operator fun plus(f: Float) =
-        Tensor(shape,  kernel.toFloatArray(handle).map { it + f }.toFloatArray())
+        Tensor(shape, batch, kernel.toFloatArray(handle).map { it + f }.toFloatArray())
             .trace(this, "Scalar Addition") { it }
 
     operator fun plus(d: Double) = plus(d.toFloat())
@@ -128,11 +105,11 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         }
 
         val h = kernel.add(handle, t.handle, 1f)
-        return Tensor(shape, h).trace(this, "Addition 0", {it}, t, "Addition 1", {it})
+        return Tensor(shape, batch, h).trace(this, "Addition 0", {it}, t, "Addition 1", {it})
     }
 
     operator fun minus(f: Float) =
-        Tensor(shape,  kernel.toFloatArray(handle).map { it - f }.toFloatArray())
+        Tensor(shape, batch, kernel.toFloatArray(handle).map { it - f }.toFloatArray())
             .trace(this, "Float Subtraction") { it * -1f }
 
     operator fun minus(d: Double) = minus(d.toFloat())
@@ -145,7 +122,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         }
 
         val h = kernel.add(handle, t.handle, -1f)
-        return Tensor(shape, h)
+        return Tensor(shape, batch, h)
     }
 
 
@@ -171,16 +148,16 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
 
         val s = if (q > 1 ) intArrayOf(n, q) else intArrayOf(n)
         val c = kernel.mul(handle, t.handle, n, m, q)
-        return Tensor(s, c).trace(this, "Multiplication 0", { it * t.t()},
+        return Tensor(s, max(batch, t.batch), c).trace(this, "Multiplication 0", { it * t.t()},
                                    t, "Multiplication 1", { this.t() * it } )
     }
 
     operator fun times(alpha: Double) = times(alpha.toFloat())
 
     operator fun times(alpha: Float): Tensor {
-        return Tensor(shape, kernel.mul(handle, alpha))
+        return Tensor(shape, batch, kernel.mul(handle, alpha))
             .trace(this, "Scalar Multiplication") {
-                Tensor(shape, kernel.mul(it.handle, alpha))
+                Tensor(shape, batch, kernel.mul(it.handle, alpha))
             }
     }
 
@@ -195,7 +172,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         val fs = kernel.toFloatArray(handle)
         val size = max(tfs.size, fs.size)
 
-        return Tensor(shape, (0 until size).map {
+        return Tensor(shape, batch, (0 until size).map {
             fs[it % fs.size]*tfs[it % tfs.size]
         }.toFloatArray())
     }
@@ -209,7 +186,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         return kernel.get(handle, loc(*x))
     }
 
-    fun map(transform: (Float) -> Float) = Tensor(shape,
+    fun map(transform: (Float) -> Float) = Tensor(shape, batch,
         toFloatArray().map(transform).toFloatArray()
     )
 
@@ -223,7 +200,7 @@ open class Tensor(val shape: IntArray, internal val handle: Handle) {
         val ns = intArrayOf(m, n)
         val nh = if ( m == 1 ) handle else kernel.transpose(handle, n, m)
 
-        return Tensor(ns, nh)
+        return Tensor(ns, batch, nh)
     }
 
 
@@ -273,7 +250,7 @@ operator fun Float.times(t: Tensor): Tensor = t * this
  * Returns the sum of all elements in the array.
  */
 @kotlin.jvm.JvmName("sumOfInt")
-fun IntArray.prod(): Int {
+fun IntArray.dot(): Int {
     var prod = 1
     for (element in this) {
         prod *= element

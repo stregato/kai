@@ -2,10 +2,7 @@ package org.soft2.kai.grad
 
 import org.junit.Before
 import org.junit.Test
-import org.soft2.kai.eye
-import org.soft2.kai.random
-import org.soft2.kai.tensor
-import org.soft2.kai.tensors.Kernel
+import org.soft2.kai.tensors.*
 import org.soft2.kai.tensors.cpu.CpuKernel
 import kotlin.test.assertEquals
 
@@ -17,8 +14,8 @@ open class CPUGradient {
 
     @Test
     fun gradOfWX() {
-        val x = tensor("1 2 3", "4 5 6")
-        val W = tensor("1 1", "2 2", "3 3")
+        val x = matrix("1 2 3", "4 5 6")
+        val W = matrix("1 1", "2 2", "3 3")
         val y = x*W
         val grad = y gradient eye(2)
 
@@ -29,10 +26,10 @@ open class CPUGradient {
 
     @Test
     fun gradOfAdd() {
-        val x = tensor("1 2 3", "4 5 6")
-        val y = tensor("1 1 1", "2 2 2")
+        val x = matrix("1 2 3", "4 5 6")
+        val y = matrix("1 1 1", "2 2 2")
         val z = x + y
-        val e = tensor(2, 3) { 1f }
+        val e = tensor(intArrayOf(2, 3)) { 1f }
         val grad = z gradient e
 
         assertEquals(e, grad[0])
@@ -42,9 +39,9 @@ open class CPUGradient {
 
     @Test
     fun gradOf3X() {
-        val x = random(2,3)
+        val x = random(shape(2, 3))
         val y = x * 3f
-        val z = tensor("1 0 0", "0 1 0")
+        val z = matrix("1 0 0", "0 1 0")
         val grad = y gradient  z
 
         assertEquals(z*3f, grad[0])

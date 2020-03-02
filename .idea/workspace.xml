@@ -2,32 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6558faec-e242-468d-bc2a-a4fc484d6fb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ClojureProjectResolveSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clojure_complete_0_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__nrepl_0_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_clojure_1_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_specs_alpha_0_2_44.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_spec_alpha_0_2_176.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jcuda_jcublas_10_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jcuda_jcublas_natives_10_1_1_linux_x86_64.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jcuda_jcuda_10_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jcuda_jcuda_natives_10_1_1_linux_x86_64.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jetbrains_annotations_13_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jetbrains_kotlin_kotlin_stdlib_1_3_61.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_61.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_soft2_kai_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clai/clai.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/fgarelli.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kai.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/clojure/org/soft2/kai/tensors.clj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/clojure/org/soft2/kai/test.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cpu/CpuKernel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/algebra.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/functions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/functions/functions.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/Optimizer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/grad/Optimizer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Cache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/MutableTensor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Tensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/cuda/CudaWrapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/ops.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tools/mnist.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tools/mnist.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestMNIST.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestMNIST.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestOptimizer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestOptimizer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/BackPropagation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/BackPropagation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/CPUGradient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/CPUGradient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/AdditionToTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/BitwiseMultiplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/BitwiseMultiplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByTensor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Transpose.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Transpose.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Update.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/Update.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="DepsLocalSettings">
     <option name="repoId" value="" />
@@ -40,8 +48,8 @@
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
-        <option value="Clojure Namespace" />
         <option value="Clojure Test Namespace" />
+        <option value="Clojure Namespace" />
       </list>
     </option>
   </component>
@@ -54,6 +62,9 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1VjxWfrWBDRe3P1VZXFRB1CqrwK" />
   <component name="ProjectViewState">
@@ -82,23 +93,12 @@
       <recent name="org.soft2.kai.tensors.cpu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fgarelli\GitHub\kai\src\main\kotlin\org\soft2\kai\tensors" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/org/soft2/kai" />
     </key>
   </component>
   <component name="ReplState" timestamp="1582639226300">{:repl-history {:ide [], :local [{:command &quot;2&quot;, :offset 1, :ns &quot;clai.core&quot;} {:command &quot;(1 2)&quot;, :offset 5, :ns &quot;clai.core&quot;} {:command &quot;(+ 2 3)&quot;, :offset 7, :ns &quot;clai.core&quot;} {:command &quot;foo&quot;, :offset 3, :ns &quot;clai.core&quot;} {:command &quot;(foo 3)&quot;, :offset 7, :ns &quot;clai.core&quot;} {:command &quot;(import org.soft2.kai)&quot;, :offset 22, :ns &quot;clai.core&quot;} {:command &quot;(import org.soft2.kai/*)&quot;, :offset 24, :ns &quot;clai.core&quot;} {:command &quot;(import org.soft2.kai.*)&quot;, :offset 24, :ns &quot;clai.core&quot;} {:command &quot;(import () org.soft2.kai.*)&quot;, :offset 9} {:command &quot;(import 'org.soft2.kai.tensors)&quot;, :offset 31, :ns &quot;clai.core&quot;} {:command &quot;(import 'org.soft2.kai.tensors.Tensor)&quot;, :offset 38, :ns &quot;clai.core&quot;} {:command &quot;(import org.soft2.kai.tensors.Tensor)&quot;, :offset 37, :ns &quot;clai.core&quot;} {:command &quot;(import ( org.soft2.kai.AlgebraKt tensor ))&quot;, :offset 43, :ns &quot;clai.core&quot;} {:command &quot;(import ( org.soft2.kai AlgebraKt ))&quot;, :offset 36, :ns &quot;clai.core&quot;} {:command &quot;(import (java.io FileReader))&quot;, :offset 29, :ns &quot;clai.core&quot;} {:command &quot;lein deps&quot;, :offset 9, :ns &quot;clai.core&quot;} {:command &quot;(import (org.soft2.kai AlgebraKt))&quot;, :offset 34, :ns &quot;clai.core&quot;} {:command &quot;( AlgebraKt/tensor 3 2 (float-array 2 3 4\n                         )  )&quot;, :offset 71, :ns &quot;clai.core&quot;} {:command &quot;( AlgebraKt/tensor 3 2 ( float-array 2 [2 2] ))&quot;, :offset 47, :ns &quot;clai.core&quot;} {:command &quot;(def t (AlgebraKt/tensor float-array 2 [2 2]))&quot;, :offset 46, :ns &quot;clai.core&quot;} {:command &quot;(def t (AlgebraKt/tensor ( float-array 2 [2 2])))&quot;, :offset 49, :ns &quot;clai.core&quot;} {:command &quot;t&quot;, :offset 1, :ns &quot;clai.core&quot;} {:command &quot;(+ t 3)&quot;, :offset 7, :ns &quot;clai.core&quot;} {:command &quot;(+ t 3.0)&quot;, :offset 9, :ns &quot;clai.core&quot;} {:command &quot;(.add t 3)&quot;, :offset 10, :ns &quot;clai.core&quot;} {:command &quot;(.plus t 3)&quot;, :offset 11, :ns &quot;clai.core&quot;} {:command &quot;(.toString t)&quot;, :offset 13, :ns &quot;clai.core&quot;}], :remote []}}</component>
-  <component name="RunManager" selected="Clojure Application.core_test">
-    <configuration name="REPL for clai" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
-      <module name="clai" />
-      <setting name="replType" value="NREPL" />
-      <setting name="execution" value="LEININGEN" />
-      <setting name="jvmArgs" value="" />
-      <setting name="parameters" value="" />
-      <setting name="workingDir" value="$PROJECT_DIR$/clai" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="fixLineNumbers" value="false" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.All in kai (2)">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -120,53 +120,58 @@
       <module name="" />
       <method v="2" />
     </configuration>
-    <configuration name="clai.core-test" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="clai" />
-      <setting name="path" value="$PROJECT_DIR$/clai/test/clai/core_test.clj" />
-      <setting name="namespace" value="" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/clai/test/clai" />
-      <method v="2" />
+    <configuration name="All in kai (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="clai.core" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="clai" />
-      <setting name="path" value="$PROJECT_DIR$/clai/src/clai/core.clj" />
-      <setting name="namespace" value="" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/clai/src/clai" />
-      <method v="2" />
+    <configuration name="All in kai (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="core" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="clai" />
-      <setting name="path" value="$PROJECT_DIR$/clai/src/clai/core.clj" />
-      <setting name="namespace" value="" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/clai/src/clai" />
-      <method v="2" />
+    <configuration name="All in kai" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="core_test" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="clai" />
-      <setting name="path" value="$PROJECT_DIR$/clai/test/clai/core_test.clj" />
-      <setting name="namespace" value="" />
-      <setting name="execution" value="LEININGEN" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/clai/test/clai" />
-      <method v="2" />
+    <configuration name="TestMNIST" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai" />
+      <option name="MAIN_CLASS_NAME" value="org.soft2.kai.TestMNIST" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.soft2.kai in kai" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kai" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.soft2.kai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.soft2.kai" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="kai [install]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
@@ -210,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Clojure Application.core_test" />
-        <item itemvalue="Clojure REPL.REPL for clai" />
-        <item itemvalue="Clojure Application.clai.core-test" />
-        <item itemvalue="Clojure Application.clai.core" />
-        <item itemvalue="Clojure Application.core" />
+        <item itemvalue="JUnit.All in kai (2)" />
+        <item itemvalue="JUnit.TestMNIST" />
+        <item itemvalue="JUnit.All in kai (1)" />
+        <item itemvalue="JUnit.All in kai" />
+        <item itemvalue="JUnit.org.soft2.kai in kai" />
       </list>
     </recent_temporary>
   </component>
@@ -274,14 +279,24 @@
     </state>
     <state x="750" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1579963965588" />
     <state x="1000" y="331" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1440@0.0.2560.1440" timestamp="1580071220349" />
-    <state x="942" y="292" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1582561829197">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="707" y="211" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1583151395594">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="707" y="211" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151395594" />
     <state x="942" y="292" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1582561829197" />
-    <state x="686" y="0" width="546" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579955097566">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582881990302">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="640" y="257" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1582881990302" />
+    <state x="686" y="0" width="546" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583149671791">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="686" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583149671791" />
     <state x="686" y="0" width="546" height="1080" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579955097566" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583146774342">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583146774342" />
     <state x="863" y="87" key="#core_test" timestamp="1582532501244">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
@@ -308,69 +323,77 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="824" y="298" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1582485990293" />
-    <state width="1250" height="259" key="GridCell.Tab.0.bottom" timestamp="1582639226009">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.0.bottom" timestamp="1583151485013">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485013" />
     <state width="1920" height="362" key="GridCell.Tab.0.bottom/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
     <state width="1250" height="373" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1582578448050" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.bottom/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
     <state width="1250" height="259" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582639226009" />
-    <state width="1250" height="259" key="GridCell.Tab.0.center" timestamp="1582639226009">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.0.center" timestamp="1583151485013">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485013" />
     <state width="1920" height="362" key="GridCell.Tab.0.center/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
     <state width="1250" height="373" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1582578448050" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.center/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
     <state width="1250" height="259" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582639226009" />
-    <state width="1250" height="259" key="GridCell.Tab.0.left" timestamp="1582639226009">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.0.left" timestamp="1583151485013">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485013" />
     <state width="1920" height="362" key="GridCell.Tab.0.left/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
     <state width="1250" height="373" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1582578448049" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.left/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
     <state width="1250" height="259" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582639226009" />
-    <state width="1250" height="259" key="GridCell.Tab.0.right" timestamp="1582639226009">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.0.right" timestamp="1583151485013">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485013" />
     <state width="1920" height="362" key="GridCell.Tab.0.right/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554661" />
     <state width="1250" height="373" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1582578448050" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887550" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="2514" height="470" key="GridCell.Tab.0.right/0.0.2560.1440/3335.180.1920.1080@0.0.2560.1440" timestamp="1579238470699" />
     <state width="1250" height="259" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582639226009" />
-    <state width="1250" height="280" key="GridCell.Tab.1.bottom" timestamp="1582639225207">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.1.bottom" timestamp="1583151485014">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485014" />
     <state width="1920" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1874" height="207" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913384" />
     <state width="1250" height="280" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582639225207" />
-    <state width="1250" height="280" key="GridCell.Tab.1.center" timestamp="1582639225207">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.1.center" timestamp="1583151485013">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485013" />
     <state width="1920" height="362" key="GridCell.Tab.1.center/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1874" height="207" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.center/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.center/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="1250" height="280" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582639225207" />
-    <state width="1250" height="280" key="GridCell.Tab.1.left" timestamp="1582639225207">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.1.left" timestamp="1583151485013">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485013" />
     <state width="1920" height="362" key="GridCell.Tab.1.left/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1874" height="207" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.left/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
     <state width="2514" height="470" key="GridCell.Tab.1.left/0.0.2560.1440/2560.360.1920.1080@0.0.2560.1440" timestamp="1579113913383" />
     <state width="1250" height="280" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582639225207" />
-    <state width="1250" height="280" key="GridCell.Tab.1.right" timestamp="1582639225207">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="960" height="356" key="GridCell.Tab.1.right" timestamp="1583151485014">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="960" height="356" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583151485014" />
     <state width="1920" height="362" key="GridCell.Tab.1.right/0.0.1920.1080/2560.180.1920.1080@0.0.1920.1080" timestamp="1578757554551" />
     <state width="1874" height="207" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1581670924970" />
     <state width="2514" height="470" key="GridCell.Tab.1.right/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578958887344" />
@@ -390,9 +413,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1080@0.0.1920.1080" timestamp="1578210323285" />
-    <state x="959" y="535" width="1920" height="1080" key="com.intellij.ide.util.TipDialog" timestamp="1578590215247">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="480" y="260" width="1920" height="1080" key="com.intellij.ide.util.TipDialog" timestamp="1582882229513">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="480" y="260" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1582882229513" />
     <state x="0" y="0" width="1920" height="1080" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1578501097775" />
     <state x="959" y="535" key="com.intellij.ide.util.TipDialog/0.0.2560.1440/2560.180.1920.1080@0.0.2560.1440" timestamp="1578590215247" />
     <state x="1003" y="622" width="553" height="200" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582219120208">
@@ -408,13 +432,18 @@
     </state>
     <state x="144" y="137" width="1630" height="811" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1582490095644" />
     <state x="192" y="183" key="new project wizard/0.0.2560.1440@0.0.2560.1440" timestamp="1582532788241" />
+    <state x="683" y="162" key="refactoring.ChangeSignatureDialog" timestamp="1583144408743">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="683" y="162" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583144408743" />
     <state x="623" y="247" key="run.anything.popup" timestamp="1581238578005">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="623" y="247" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1581238578005" />
-    <state x="719" y="60" width="1314" height="1379" key="search.everywhere.popup" timestamp="1582561913614">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="539" y="43" width="986" height="996" key="search.everywhere.popup" timestamp="1583147153831">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="539" y="43" width="986" height="996" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1583147153831" />
     <state x="539" y="45" width="985" height="1034" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582488474063" />
     <state x="719" y="60" width="1314" height="1379" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1582561913614" />
   </component>
@@ -423,12 +452,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/TestTensor.kt</url>
-          <line>143</line>
+          <line>150</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/tensors/cpu/MultiplicationByScalar.kt</url>
-          <line>19</line>
+          <line>21</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
@@ -459,7 +488,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/org/soft2/kai/grad/CPUGradient.kt</url>
-          <line>19</line>
+          <line>16</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
@@ -469,7 +498,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/org/soft2/kai/tensors/Cache.kt</url>
-          <line>20</line>
+          <line>26</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

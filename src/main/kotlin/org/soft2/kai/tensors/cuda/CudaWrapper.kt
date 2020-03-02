@@ -3,7 +3,7 @@ package org.soft2.kai.tensors.cuda
 import jcuda.Pointer
 import jcuda.Sizeof
 import jcuda.jcublas.*
-import org.soft2.kai.tensors.prod
+import org.soft2.kai.tensors.dot
 
 
 object CudaWrapper {
@@ -82,8 +82,8 @@ object CudaWrapper {
         val lda = shapeA[0]
         val ldb = shapeB[1]
         val ldc = shapeA[1]
-        val strideA = if (batchA == 1) 0L else shapeA.prod().toLong()
-        val strideB = if (batchB == 1) 0L else shapeB.prod().toLong()
+        val strideA = if (batchA == 1) 0L else shapeA.dot().toLong()
+        val strideB = if (batchB == 1) 0L else shapeB.dot().toLong()
 
         val batchCount = maxOf(batchA, batchB)
         val strideC = m * n.toLong()

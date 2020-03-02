@@ -1,8 +1,9 @@
 package org.soft2.kai.tools
 
 import org.soft2.kai.downloadFile
-import org.soft2.kai.tensor
+import org.soft2.kai.tensors.tensor
 import org.soft2.kai.tensors.Tensor
+import org.soft2.kai.tensors.shape
 import java.io.DataInputStream
 import java.io.FileInputStream
 import java.io.InputStream
@@ -81,7 +82,9 @@ class MNISTDataSource(val batchSize: Int,
             labels[i] = labelInputStream.readUnsignedByte().toFloat()
         }
         currentPos += dataSize
-        return Data(labels, tensor(intArrayOf(n,m), images.flatMap { it.toList() }.toFloatArray()))
+        return Data(labels,
+            tensor(shape(n, m), dataSize, images.flatMap { it.toList() }.toFloatArray())
+        )
     }
 
     override fun hasNext() = currentPos < numberOfItems

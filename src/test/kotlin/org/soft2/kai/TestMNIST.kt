@@ -1,8 +1,8 @@
 package org.soft2.kai
 
 import org.junit.Test
+import org.soft2.kai.tensors.*
 
-import org.soft2.kai.tensors.Tensor
 import org.soft2.kai.tools.MNIST
 import kotlin.math.sqrt
 
@@ -15,20 +15,17 @@ class TestMNIST {
     private val nh = 50
     private val m = train.m * train.n
 
-    private var w1 = random(m, nh) / sqrt(m.toDouble()).toFloat()
-    private var b1 = zeros(nh)
-    private var w2 = random(nh, 1) / sqrt(nh.toDouble()).toFloat()
-    private var b2 = zeros(1)
+    private var w1 = random(shape(m, nh)) / sqrt(m.toDouble()).toFloat()
+    private var b1 = zeros(shape(nh))
+    private var w2 = random(shape(nh), 1) / sqrt(nh.toDouble()).toFloat()
+    private var b2 = zeros(shape(1))
 
     init {
-        print("w1 mean = ${w1.mean}, std = ${w2.std}")
-        print("w2 mean = ${w1.mean}, std = ${w2.std}")
-
+        print("w1 mean = ${mean(w1)}, std = ${std(w1)}")
+        print("w2 mean = ${mean(w1)}, std = ${std(w2)}")
     }
 
     private fun lin(x: Tensor, w: Tensor, b: Tensor) = w * x +b
-
-
 
     private fun relu(x: Tensor) =
         x.map {if (it > 0f) it else 0f}
@@ -49,7 +46,7 @@ class TestMNIST {
 
             for (data in train) {
                 val o = model(data.images)
-                val error = o - tensor(*data.labels)
+                val error = o - vector(*data.labels)
 
             }
         }

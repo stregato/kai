@@ -1,11 +1,10 @@
 package org.soft2.kai.grad
 
-import org.soft2.kai.tensors.MutableTensor
 import org.soft2.kai.tensors.Tensor
 
 class Optimizer {
 
-    val weights = mutableSetOf<MutableTensor>()
+//    val weights = mutableSetOf<Te>()
 
     var learningRate = 0.01f
 
