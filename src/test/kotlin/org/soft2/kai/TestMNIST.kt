@@ -17,7 +17,7 @@ class TestMNIST {
 
     private var w1 = random(shape(m, nh)) / sqrt(m.toDouble()).toFloat()
     private var b1 = zeros(shape(nh))
-    private var w2 = random(shape(nh), 1) / sqrt(nh.toDouble()).toFloat()
+    private var w2 = random(shape(nh, 1)) / sqrt(nh.toDouble()).toFloat()
     private var b2 = zeros(shape(1))
 
     init {

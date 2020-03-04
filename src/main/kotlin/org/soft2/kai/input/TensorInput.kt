@@ -1,4 +1,4 @@
-package org.soft2.kai.grad
+package org.soft2.kai.input
 
 import org.soft2.kai.tensors.Tensor
 

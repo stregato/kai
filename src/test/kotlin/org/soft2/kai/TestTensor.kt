@@ -163,7 +163,7 @@ class TestTensor {
 
     @Test
     fun relu() {
-        val t = tensor(intArrayOf(10)) { (it-5).toFloat() }
+        val t = tensor(intArrayOf(11)) { (it-5).toFloat() }
         val r = t.map { if (it > 0f) it else 0f }
 
         assertEquals(0f, sum(t))

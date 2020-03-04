@@ -38,9 +38,9 @@ open class AdditionToTensor {
 
     @Test
     fun additionWithBatch() {
-        val a = tensor(shape(3, 2), 2) { it.toFloat() / 2 }.shatter()
-        val b = tensor(shape(2, 2)) { it.toFloat() }
-        val e = tensor(shape(3, 2), 2) { it.toFloat() / 2 + it % 4 }.shatter()
+        val a = tensor(shape(3, 2), 2) { it.toFloat() / 2 }
+        val b = tensor(shape(3, 2)) { it.toFloat() }
+        val e = tensor(shape(3, 2), 2) { it.toFloat() / 2 + it % 6 }
 
         assertEquals(e, a+b)
     }
