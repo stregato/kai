@@ -1,7 +1,7 @@
-package org.soft2.kai.input
+package org.soft2.kai.io
 
 import org.soft2.kai.tensors.Tensor
 
-interface TensorInput {
+interface TensorReader {
     fun read(batchSize: Int): Tensor
 }

@@ -18,7 +18,7 @@ class Optimizer {
         val E = tensor(shape(2), 2, floatArrayOf(0f, 1f, 1f, 0f))
 
 
-        var training = Training(X, E)
+//        var training = Training(X, E)
     }
 
     @Test
@@ -36,7 +36,7 @@ class Optimizer {
         val optimizer = Optimizer()
 //        optimizer.weights.add(W)
 
-        optimizer(c)
+//        optimizer(c)
     }
 
 }

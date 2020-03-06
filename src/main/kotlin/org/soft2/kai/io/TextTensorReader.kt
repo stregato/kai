@@ -1,4 +1,4 @@
-package org.soft2.kai.input
+package org.soft2.kai.io
 
 import org.soft2.kai.tensors.Tensor
 import org.soft2.kai.tensors.dot
@@ -6,16 +6,22 @@ import org.soft2.kai.tensors.tensor
 import java.io.BufferedReader
 import java.io.Reader
 
-class TextTensorInput(val shape: IntArray, reader: Reader, private val separator: String = ' '): TensorInput {
+class TextTensorReader(val shape: IntArray, reader: Reader, private val separator: String = "\\s+"): TensorReader {
     private val reader = BufferedReader(reader)
     private val volume = shape.dot()
 
     override fun read(batchSize: Int): Tensor {
-        val content = MutableList<Float>(0)
+        val content = mutableListOf<Float>()
 
         for (i in 0 until batchSize) {
             val line = reader.readLine() ?: break
-            content.addAll(line.split(separator).map { it.toFloat() })
+            val tokens = line.trim().split(Regex(separator))
+
+            check( volume == tokens.size ) {
+                "Mismatch between #items ${tokens.size} and volume $volume. Line is '$line'"
+            }
+
+            content.addAll(tokens.map { it.toFloat() })
         }
 
         val batch = content.size / volume
