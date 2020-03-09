@@ -8,7 +8,7 @@ import java.util.zip.ZipOutputStream
 class BinaryTensorWriter(stream: OutputStream, private val compress: Boolean = true): TensorWriter {
     private val writer = if (compress) DataOutputStream(ZipOutputStream(stream)) else DataOutputStream(stream)
 
-    fun writeHeader(t: Tensor) {
+    private fun writeHeader(t: Tensor) {
         writer.writeInt(t.shape.size)
         t.shape.forEach { writer.writeInt(it) }
     }

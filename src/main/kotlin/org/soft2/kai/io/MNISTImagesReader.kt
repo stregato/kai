@@ -11,6 +11,8 @@ import java.util.zip.GZIPInputStream
 
 class MNISTImagesReader(private val imagesStream: InputStream): TensorReader {
 
+    override var eof: Boolean = false
+
     private val dataInputStream = DataInputStream(GZIPInputStream(imagesStream))
     private val magicNumber = dataInputStream.readInt()
     private var numberOfItems = dataInputStream.readInt()/10
@@ -36,6 +38,8 @@ class MNISTImagesReader(private val imagesStream: InputStream): TensorReader {
         }
 
         numberOfItems -= batch
-        return tensor(shape(n,m), batch, elements.toFloatArray())
+        eof = numberOfItems == 0
+        return tensor(shape(n*m), batch, elements.toFloatArray())
     }
+
 }

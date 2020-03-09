@@ -11,6 +11,7 @@ import java.lang.Integer.min
 import java.util.zip.GZIPInputStream
 
 class MNISTLabelsReader(private val labelsStream: InputStream): TensorReader {
+    override var eof: Boolean = false
 
     private val labelInputStream = DataInputStream(GZIPInputStream(labelsStream))
     private val labelMagicNumber = labelInputStream.readInt()
@@ -30,6 +31,7 @@ class MNISTLabelsReader(private val labelsStream: InputStream): TensorReader {
         }
 
         numberOfLabels -= batch
+        eof = numberOfLabels == 0
         return tensor(shape(1), batch, labels.toFloatArray())
     }
 }

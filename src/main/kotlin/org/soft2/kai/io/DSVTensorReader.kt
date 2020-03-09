@@ -7,6 +7,8 @@ import java.io.BufferedReader
 import java.io.Reader
 
 class DSVTensorReader(val shape: IntArray, reader: Reader, private val separator: String = "\\s+"): TensorReader {
+    override var eof: Boolean = false
+
     private val reader = BufferedReader(reader)
     private val volume = shape.dot()
 
@@ -25,6 +27,7 @@ class DSVTensorReader(val shape: IntArray, reader: Reader, private val separator
         }
 
         val batch = content.size / volume
+        eof = batch < batchSize
         return tensor(shape, batch, content.toFloatArray())
     }
 }

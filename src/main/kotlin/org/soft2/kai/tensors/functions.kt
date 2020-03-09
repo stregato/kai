@@ -7,7 +7,7 @@ import kotlin.random.Random
 /** create an array that represents a tensor shape */
 fun shape(vararg dims: Int) = intArrayOf(*dims)
 
-fun shapeToString(shape: IntArray) = "(${shape.joinToString { "x" }})"
+fun shapeToString(shape: IntArray) = "(${shape.joinToString() })"
 
 fun elements(vararg es: Number) = es.map { it.toFloat() }.toFloatArray()
 

@@ -130,16 +130,16 @@ open class Tensor(val shape: IntArray, val batch: Int, internal val handle: Hand
 
     operator fun times(t: Tensor): Tensor {
         check(shape.size < 3) {
-            "Invalid shape in tensor $this for matrix multiplication"
+            "Invalid shape ${shapeToString(this.shape)} for matrix multiplication in tensor $this"
         }
         require(t.shape.size < 3) {
-            "Invalid shape in tensor $t for matrix multiplication"
+            "Invalid shape ${shapeToString(t.shape)} for matrix multiplication in tensor $t"
         }
         require ( shape.getOrElse(1) {1} == t.shape[0] ) {
-            "Incompatible shape size between $this and $t"
+            "Incompatible shape size between ${shapeToString(this.shape)} and ${shapeToString(t.shape)}"
         }
         require( batch == t.batch || batch == 1 || t.batch == 1) {
-            "Incompatible batch between $this and $t"
+            "Incompatible batch between ${t.batch} and $batch"
         }
 
         val n = shape[0]

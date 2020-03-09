@@ -1,8 +1,11 @@
 package org.soft2.kai.grad
 
-import org.soft2.kai.tensors.Tensor
+import org.soft2.kai.io.TensorReader
+import org.soft2.kai.tensors.*
 
 typealias C1 = (Tensor) -> Tensor
+typealias C2 = (Tensor, Tensor) -> Tensor
+typealias M1 = (Tensor) -> Float
 
 data class Step(val source: Tensor, var label: String, val derivative: C1,
                 var gradient: Tensor? = null, var update: Tensor? = null) {
@@ -56,3 +59,38 @@ fun Tensor.backpropagate(e: Tensor, update: (diff: Tensor, lastUpdate: Tensor?) 
 fun defaultUpdate(diff: Tensor, lastUpdate: Tensor?) = diff
 
 infix fun Tensor.backpropagate(e: Tensor) = this.backpropagate(e, ::defaultUpdate)
+
+fun pipe(vararg fs: C1) = ({ t: Tensor ->
+    fs.fold(t) { acc, f ->
+        f(acc)
+    }
+})
+
+
+fun diff0(E: Tensor, Y: Tensor) = E-Y
+
+fun exponentialDown(iteration: Int) = defaults.learningRate / (2 shl iteration)
+
+fun learn(f: C1, X: Tensor, E: Tensor, times: Int = 1, diff: C2 = ::diff0, norm: M1 = ::norm0,
+          learnRate: (Int)-> Float = ::exponentialDown): Float {
+    var d = zeros(shape())
+    repeat(times) {
+        val Y = f(X)
+        d = diff(Y,E)
+        Y.backpropagate( d * learnRate(it) )
+    }
+    return norm(d)
+}
+
+fun learn(f: C1, xs: TensorReader, ys: TensorReader, times: Int = 1, batchSize: Int = defaults.batchSize,
+          diff: C2 = ::diff0, norm: M1 = ::norm0, learnRate: (Int)-> Float = ::exponentialDown): Float {
+
+    var error = 0f
+    do {
+        val X = xs.read(batchSize)
+        val Y = ys.read(batchSize)
+        error += learn(f, X, Y, times, diff, norm, learnRate)
+    } while(!xs.eof && !ys.eof)
+
+    return error
+}

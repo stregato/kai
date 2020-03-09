@@ -7,12 +7,11 @@ import java.util.zip.GZIPInputStream
 
 fun toString(shape: IntArray) =  "(" + shape.joinToString() + ")"
 
-fun getFile(filename: String): File {
+fun localFile(filename: String): File {
     val home = File(System.getProperty("user.home"))
-    val folder = File(home, "./.kai")
-    folder.mkdirs()
-
-    return File(folder, filename)
+    val file = File(home, "./.kai/$filename").canonicalFile
+    file.parentFile.mkdirs()
+    return file
 }
 
 
@@ -20,7 +19,7 @@ fun getFile(filename: String): File {
 fun downloadFile(url: String, filename: String = "", gunzip: Boolean =false): File {
     val u = java.net.URL(url)
 
-    val file = getFile(if (filename == "") u.file else filename)
+    val file = localFile(if (filename == "") u.file else filename)
     if ( !file.exists() ) {
         val inputStream = if (gunzip) GZIPInputStream(u.openStream()) else u.openStream()
         val readableByteChannel = Channels.newChannel(inputStream);

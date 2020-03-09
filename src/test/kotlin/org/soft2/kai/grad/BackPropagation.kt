@@ -76,4 +76,20 @@ class BackPropagation {
         }
     }
 
+
+    @Test
+    fun xorLear() {
+        val X = tensor(shape(2), 2, floatArrayOf(1f, 0f, 0f, 1f))
+        val E = tensor(shape(2), 2, floatArrayOf(0f, 1f, 1f, 0f))
+
+        val params = listOf<Tensor>(
+            random(shape(2, 2)),
+            random(shape(2, 2))
+        ).map { it.makeMutable() }
+
+        fun model(x: Tensor) = params[1] * params[0] * x
+        learn(::model, X, E, 4)
+
+
+    }
 }

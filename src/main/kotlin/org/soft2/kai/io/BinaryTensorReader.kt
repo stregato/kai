@@ -5,11 +5,14 @@ import org.soft2.kai.tensors.dot
 import org.soft2.kai.tensors.shapeToString
 import org.soft2.kai.tensors.tensor
 import java.io.DataInputStream
+import java.io.EOFException
 import java.io.InputStream
 import java.util.zip.ZipInputStream
 
 class BinaryTensorReader(stream: InputStream, private val compress: Boolean = true): TensorReader {
     private val reader = if (compress) DataInputStream(ZipInputStream(stream)) else DataInputStream(stream)
+
+    override var eof: Boolean = false
 
     private fun readShape(): IntArray {
         val shapeSize = reader.readInt()
@@ -18,7 +21,7 @@ class BinaryTensorReader(stream: InputStream, private val compress: Boolean = tr
 
     override fun read(batchSize: Int): Tensor {
         if ( reader.available() == 0 ) {
-            return tensor(intArrayOf(0)) {}
+            return tensor(intArrayOf(0)) {0f}
         }
 
         val content = mutableListOf<Float>()
@@ -26,7 +29,7 @@ class BinaryTensorReader(stream: InputStream, private val compress: Boolean = tr
         val volume = shape.dot()
 
         for (i in 0 until batchSize) {
-            for (i in 0 until volume ) {
+            for (j in 0 until volume ) {
                 content.add(reader.readFloat())
             }
 
@@ -36,7 +39,8 @@ class BinaryTensorReader(stream: InputStream, private val compress: Boolean = tr
                     """Unexpected shape ${shapeToString(s)} in read of batch $batchSize. 
                        Expected shape is ${shapeToString(shape)}""".trimIndent()
                 }
-            } catch (EOFException e) {
+            } catch (e: EOFException) {
+                eof = true
                 break
             }
         }
@@ -44,4 +48,5 @@ class BinaryTensorReader(stream: InputStream, private val compress: Boolean = tr
         val batch = content.size / volume
         return tensor(shape, batch, content.toFloatArray())
     }
+
 }
