@@ -5,7 +5,7 @@ import org.soft2.kai.tensors.shape
 import java.io.StringReader
 import kotlin.test.assertEquals
 
-class TextTensorReaderTest {
+class DSVTensorReaderTest {
 
     private val content = """
         0 0.5 1 1.5 2 2.5 3 3.5 4
@@ -16,7 +16,7 @@ class TextTensorReaderTest {
 
     @Test
     fun loadContent() {
-        val reader = TextTensorReader(shape(3, 3), StringReader(content))
+        val reader = DSVTensorReader(shape(3, 3), StringReader(content))
 
         val t1 = reader.read(2)
         assertEquals(2, t1.batch)

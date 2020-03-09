@@ -5,7 +5,7 @@ import org.soft2.kai.tensors.dot
 import java.io.BufferedWriter
 import java.io.Writer
 
-class TextTensorWriter(val shape: IntArray, writer: Writer, private val separator: String = " "): TensorWriter {
+class DSVTensorWriter(val shape: IntArray, writer: Writer, private val separator: String = " "): TensorWriter {
     private val writer = BufferedWriter(writer)
     private val volume = shape.dot()
 

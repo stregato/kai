@@ -6,7 +6,7 @@ import org.soft2.kai.tensors.tensor
 import java.io.BufferedReader
 import java.io.Reader
 
-class TextTensorReader(val shape: IntArray, reader: Reader, private val separator: String = "\\s+"): TensorReader {
+class DSVTensorReader(val shape: IntArray, reader: Reader, private val separator: String = "\\s+"): TensorReader {
     private val reader = BufferedReader(reader)
     private val volume = shape.dot()
 

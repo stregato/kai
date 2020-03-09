@@ -7,6 +7,8 @@ import kotlin.random.Random
 /** create an array that represents a tensor shape */
 fun shape(vararg dims: Int) = intArrayOf(*dims)
 
+fun shapeToString(shape: IntArray) = "(${shape.joinToString { "x" }})"
+
 fun elements(vararg es: Number) = es.map { it.toFloat() }.toFloatArray()
 
 /** Get the mean of tensor elements */
