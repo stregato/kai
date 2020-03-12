@@ -55,8 +55,8 @@ object mnist {
         val imageSize = images.n * images.m
 
         params = listOf(
-            random(shape(imageSize, hiddenLayerSize)),
-            random(shape(hiddenLayerSize, 1))
+            random(shape(hiddenLayerSize, imageSize)),
+            random(shape(1, hiddenLayerSize))
         ).map { it.makeMutable() }
 
         learn(model, images, labels)

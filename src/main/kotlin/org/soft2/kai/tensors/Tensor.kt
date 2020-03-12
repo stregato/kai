@@ -178,7 +178,7 @@ open class Tensor(val shape: IntArray, val batch: Int, internal val handle: Hand
     }
 
     override fun toString() = StringBuilder()
-        .append("Tensor $kernel (").append(batch).append("x").append(shape.joinToString("•")).append("): [")
+        .append("Tensor $kernel (").append(shape.joinToString("•")).append("x").append(batch).append("): [")
         .append(toFloatArray().joinToString()).append("]").toString()
 
     operator fun get(vararg x: Int): Float {
