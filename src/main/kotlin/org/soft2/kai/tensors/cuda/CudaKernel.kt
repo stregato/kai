@@ -5,6 +5,7 @@ import jcuda.Sizeof
 import jcuda.jcublas.*
 import org.soft2.kai.tensors.Handle
 import org.soft2.kai.tensors.Kernel
+import java.io.File
 
 object CudaKernel: Kernel {
 
@@ -201,9 +202,30 @@ object CudaKernel: Kernel {
     private var cublasHandle: cublasHandle = cublasHandle()
     private val pOne: Pointer = Pointer.to(floatArrayOf(1f))
     private val pZero: Pointer = Pointer.to(floatArrayOf(0f))
+    private val libs = arrayListOf<String>(
+        "libcublasLt",
+        "libcublas",
+        "libcuda",
+        "libnvidia-fatbinaryloader",
+        "libnvblas"
+    )
+
+    private var libPath = File("./lib").canonicalFile
+
+    private fun loadLib(libName: String) {
+        var libFile = libPath.listFiles { file -> file.name.startsWith(libName) }.last() ?:
+            throw Error("Library $libName not available")
+        try {
+            System.load(libFile.absolutePath)
+        } catch (e: Throwable) {
+            println("Cannot load library $libFile")
+        }
+    }
 
     init {
         try {
+            libs.forEach { loadLib(it)}
+
             JCublas.setExceptionsEnabled(true)
             JCublas2.setExceptionsEnabled(true)
             available = JCublas2.cublasCreate(cublasHandle) == cublasStatus.CUBLAS_STATUS_SUCCESS
