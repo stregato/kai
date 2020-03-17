@@ -30,7 +30,7 @@ object mnist {
 
     init {
         val paramsFile = localFile("mnist/params.bin")
-        params = if ( paramsFile.exists() ) {
+        params = if ( paramsFile.exists() && paramsFile.length() > 0) {
             load(paramsFile)
         } else {
             train(paramsFile)

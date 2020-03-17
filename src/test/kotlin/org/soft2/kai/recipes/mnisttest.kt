@@ -2,7 +2,7 @@ package org.soft2.kai.recipes
 
 import org.junit.Test
 
-class MNISTTest {
+class mnisttest {
 
     @Test
     fun simple() {
